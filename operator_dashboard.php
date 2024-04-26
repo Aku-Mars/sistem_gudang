@@ -148,7 +148,7 @@ $conn->close();
             <?php foreach ($gudangs as $gudang): ?>
                 <li>
                     <div class="thumbnail">
-                    <img src="https://www.hashmicro.com/id/blog/wp-content/uploads/2024/01/picking-and-packing-2-scaled.jpg" alt="<?php echo $gudang['lokasi']; ?>">
+                    <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
                     <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a>
                 </li>
