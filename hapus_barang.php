@@ -57,9 +57,14 @@
 
             if ($conn->query($sql) === TRUE) {
                 echo "Barang berhasil dihapus";
-                $gudangId = $_SESSION['gudang_id'];
-                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
-                exit;
+                // Periksa apakah $_SESSION['gudang_id'] memiliki nilai
+                if (isset($_SESSION['gudang_id']) && $_SESSION['gudang_id'] !== '') {
+                    $gudangId = $_SESSION['gudang_id'];
+                    header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
+                    exit;
+                } else {
+                    echo "Gudang ID tidak valid";
+                }
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
