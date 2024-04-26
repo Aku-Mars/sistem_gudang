@@ -34,6 +34,16 @@ if ($result->num_rows == 1) {
     exit;
 }
 
+// Ambil data barang dari database
+$sql_barang = "SELECT * FROM barang WHERE id_gudang=$gudangId";
+$result_barang = $conn->query($sql_barang);
+$barang = [];
+if ($result_barang->num_rows > 0) {
+    while ($row = $result_barang->fetch_assoc()) {
+        $barang[] = $row;
+    }
+}
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -55,6 +65,22 @@ $conn->close();
         <label for="lokasi">Lokasi:</label>
         <input type="text" name="lokasi" id="lokasi" value="<?php echo $gudang['lokasi']; ?>" required>
         <button type="submit">Simpan Perubahan</button>
+    </form>
+
+    <h3>List Barang:</h3>
+    <ul>
+        <?php foreach ($barang as $b): ?>
+            <li><?php echo $b['nama']; ?> - Jumlah: <?php echo $b['jumlah']; ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h3>Tambah Barang Baru:</h3>
+    <form action="" method="post">
+        <label for="nama_barang">Nama Barang:</label>
+        <input type="text" name="nama_barang" id="nama_barang" required>
+        <label for="jumlah_barang">Jumlah Barang:</label>
+        <input type="number" name="jumlah_barang" id="jumlah_barang" required>
+        <button type="submit">Tambah Barang</button>
     </form>
 
     <a href="operator_dashboard.php">Kembali</a>
