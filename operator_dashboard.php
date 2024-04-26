@@ -55,9 +55,6 @@ $conn->close();
         <button type="submit">Buat Gudang Baru</button>
     </form>
 
-    <h3>Membuat User Baru:</h3>
-    <a href="add_user.php">Buat User</a>
-
     <a href="index.php">Keluar</a>
 </body>
 </html>
