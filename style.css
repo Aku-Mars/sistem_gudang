@@ -9,30 +9,104 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Login Container */
 .login-container {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
 }
 
-input[type="text"],
-input[type="password"],
-button {
+/* Login Form */
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container button {
     display: block;
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    box-sizing: border-box;
 }
 
-button {
+.login-container button {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+.login-container button:hover {
     background-color: #0056b3;
+}
+
+/* Dashboard */
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 20px;
+}
+
+.dashboard-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-container ul li {
+    margin-bottom: 10px;
+}
+
+.dashboard-container ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-container ul li a:hover {
+    background-color: #0056b3;
+}
+
+/* User Dashboard */
+.user-dashboard-container p {
+    margin-bottom: 10px;
+}
+
+.user-dashboard-container h4 {
+    margin-bottom: 10px;
+}
+
+.user-dashboard-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-dashboard-container th,
+.user-dashboard-container td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.user-dashboard-container th {
+    background-color: #f2f2f2;
+}
+
+.user-dashboard-container tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
 }
