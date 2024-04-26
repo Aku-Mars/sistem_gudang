@@ -149,6 +149,12 @@ $conn->close();
             margin-top: 20px;
             display: inline-block;
         }
+
+        img {
+            max-width: 80%; 
+            display: block;
+            margin: 0 auto; 
+        }
     </style>
 </head>
 <body>

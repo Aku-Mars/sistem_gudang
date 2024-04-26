@@ -100,6 +100,12 @@ $conn->close();
         a.button:hover {
             background-color: #007700;
         }
+
+        img {
+            max-width: 80%; 
+            display: block;
+            margin: 0 auto; 
+        }
     </style>
 </head>
 <body>
