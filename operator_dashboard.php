@@ -69,8 +69,7 @@ $conn->close();
 
         ul li {
             margin-bottom: 30px; 
-            display: flex; 
-            align-items: center; 
+            text-align: center; /* Untuk mengatur posisi tengah */
         }
 
         ul li .thumbnail {
@@ -78,7 +77,7 @@ $conn->close();
             height: 400px; 
             border-radius: 20px;
             overflow: hidden;
-            margin-right: 20px;
+            margin: 0 auto 20px; /* Untuk mengatur posisi tengah */
             border: 2px solid #999;
         }
 
@@ -91,12 +90,14 @@ $conn->close();
         ul li .button {
             background-color: #ffcc00; 
             color: #333; 
-            padding: 20px 15px;
+            padding: 20px 40px; /* Mengatur lebar tombol */
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block; /* Agar tombol berada di tengah */
+            margin: 0 auto; /* Untuk mengatur posisi tengah */
         }
 
         ul li .button:hover {
@@ -105,6 +106,7 @@ $conn->close();
 
         form {
             margin-top: 20px;
+            text-align: center; /* Untuk mengatur posisi tengah */
         }
 
         label {
