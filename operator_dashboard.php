@@ -69,7 +69,8 @@ $conn->close();
 
         ul li {
             margin-bottom: 30px; 
-            text-align: center; 
+            display: flex; 
+            align-items: center; 
         }
 
         ul li .thumbnail {
@@ -77,7 +78,7 @@ $conn->close();
             height: 400px; 
             border-radius: 20px;
             overflow: hidden;
-            margin: 0 auto 20px; 
+            margin-right: 20px;
             border: 2px solid #999;
         }
 
@@ -90,14 +91,12 @@ $conn->close();
         ul li .button {
             background-color: #ffcc00; 
             color: #333; 
-            padding: 20px 40px; 
+            padding: 20px 15px;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            display: block; 
-            margin: 0 auto; 
         }
 
         ul li .button:hover {
@@ -106,7 +105,6 @@ $conn->close();
 
         form {
             margin-top: 20px;
-            text-align: center;
         }
 
         label {
@@ -171,4 +169,3 @@ $conn->close();
     </div>
 </body>
 </html>
-
