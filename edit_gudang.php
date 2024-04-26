@@ -7,6 +7,19 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
     exit;
 }
 
+// Fungsi untuk mengambil list barang dari database
+function getListBarang($conn, $gudangId) {
+    $sql = "SELECT * FROM barang WHERE gudang_id=$gudangId";
+    $result = $conn->query($sql);
+    $barang = [];
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $barang[] = $row;
+        }
+    }
+    return $barang;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gudangId = $_GET['id'];
     $penyewa = $_POST['penyewa'];
@@ -34,6 +47,9 @@ if ($result->num_rows == 1) {
     exit;
 }
 
+// Ambil list barang dari database
+$barang = getListBarang($conn, $gudangId);
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -55,6 +71,23 @@ $conn->close();
         <label for="lokasi">Lokasi:</label>
         <input type="text" name="lokasi" id="lokasi" value="<?php echo $gudang['lokasi']; ?>" required>
         <button type="submit">Simpan Perubahan</button>
+    </form>
+
+    <h3>List Barang:</h3>
+    <ul>
+        <?php foreach ($barang as $b): ?>
+            <li><?php echo $b['nama_barang']; ?> - Jumlah: <?php echo $b['jumlah']; ?></li>
+        <?php endforeach; ?>
+    </ul>
+
+    <h3>Tambah Barang Baru:</h3>
+    <form action="tambah_barang.php" method="post">
+        <input type="hidden" name="gudang_id" value="<?php echo $gudangId; ?>">
+        <label for="nama_barang">Nama Barang:</label>
+        <input type="text" name="nama_barang" id="nama_barang" required>
+        <label for="jumlah_barang">Jumlah Barang:</label>
+        <input type="number" name="jumlah_barang" id="jumlah_barang" required>
+        <button type="submit">Tambah Barang</button>
     </form>
 
     <a href="operator_dashboard.php">Kembali</a>
