@@ -82,15 +82,24 @@ $conn->close();
         ul li a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #ccc; 
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            position: relative;
+        }
+
+        ul li a::after {
+            content: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtAa9oeyNh3BSbyCnRFEODDrGYMqvoxFKIhf00B4IIZQ&s'); 
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         ul li a:hover {
-            background-color: #0056b3;
+            background-color: #999; 
         }
 
         form {
