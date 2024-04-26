@@ -82,7 +82,7 @@ $conn->close();
         ul li a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #ccc; /* Warna abu-abu */
+            background-color: #000000; /* Warna abu-abu */
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -90,7 +90,7 @@ $conn->close();
         }
 
         ul li a:hover {
-            background-color: #999; /* Warna abu-abu yang lebih gelap saat dihover */
+            background-color: #ccc; /* Warna abu-abu yang lebih gelap saat dihover */
         }
 
         form {

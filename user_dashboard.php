@@ -37,42 +37,103 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
+    <style>
+        /* Styling untuk user_dashboard.php */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff; /* Warna background putih */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff; /* Warna background putih */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #009900; /* Warna teks hijau */
+        }
+
+        h3 {
+            color: #333333; /* Warna teks hitam */
+        }
+
+        p {
+            color: #666666; /* Warna teks abu-abu */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #cccccc; /* Warna border abu-abu */
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Warna background abu-abu muda */
+        }
+
+        a.button {
+            background-color: #009900; /* Warna background hijau */
+            color: #ffffff; /* Warna teks putih */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #007700; /* Warna background hijau yang sedikit lebih gelap */
+        }
+    </style>
 </head>
 <body>
-    <h2>Selamat datang, User!</h2>
+    <div class="container">
+        <h2>Selamat datang, User!</h2>
 
-    <?php if ($gudang): ?>
-        <h3>Gudang Anda</h3>
-        <p>Nama Penyewa: <?php echo $gudang['penyewa']; ?></p>
-        <p>Tanggal Sewa: <?php echo $gudang['tanggal_sewa']; ?></p>
-        <p>Tanggal Akhir Sewa: <?php echo $gudang['tanggal_akhir_sewa']; ?></p>
-        <p>Lokasi: <?php echo $gudang['lokasi']; ?></p>
-        
-        <h4>List Barang:</h4>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Nama Barang</th>
-                    <th>ID Barang</th>
-                    <th>Jumlah</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($barang as $index => $barang): ?>
+        <?php if ($gudang): ?>
+            <h3>Gudang Anda</h3>
+            <p>Nama Penyewa: <?php echo $gudang['penyewa']; ?></p>
+            <p>Tanggal Sewa: <?php echo $gudang['tanggal_sewa']; ?></p>
+            <p>Tanggal Akhir Sewa: <?php echo $gudang['tanggal_akhir_sewa']; ?></p>
+            <p>Lokasi: <?php echo $gudang['lokasi']; ?></p>
+            
+            <h4>List Barang:</h4>
+            <table>
+                <thead>
                     <tr>
-                        <td><?php echo $index + 1; ?></td>
-                        <td><?php echo $barang['nama_barang']; ?></td>
-                        <td><?php echo $barang['id']; ?></td>
-                        <td><?php echo $barang['jumlah']; ?></td>
+                        <th>No.</th>
+                        <th>Nama Barang</th>
+                        <th>ID Barang</th>
+                        <th>Jumlah</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Gudang tidak ditemukan untuk pengguna ini.</p>
-    <?php endif; ?>
+                </thead>
+                <tbody>
+                    <?php foreach ($barang as $index => $barang): ?>
+                        <tr>
+                            <td><?php echo $index + 1; ?></td>
+                            <td><?php echo $barang['nama_barang']; ?></td>
+                            <td><?php echo $barang['id']; ?></td>
+                            <td><?php echo $barang['jumlah']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p>Gudang tidak ditemukan untuk pengguna ini.</p>
+        <?php endif; ?>
 
-    <a href="index.php">Keluar</a>
+        <a href="index.php" class="button">Keluar</a>
+    </div>
 </body>
 </html>
