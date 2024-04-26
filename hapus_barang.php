@@ -35,16 +35,13 @@
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $barangId = $_POST['barang_id'];
-            $gudangId = $_POST['gudang_id'];
-            $nama_barang = $_POST['nama_barang'];
-            $jumlah_barang = $_POST['jumlah_barang'];
 
             $sql = "DELETE FROM barang WHERE id=$barangId";
 
             if ($conn->query($sql) === TRUE) {
-                header('Refresh: 1.5; URL=operator_dashboard.php');
                 echo "Barang berhasil dihapus";
                 $gudangId = $_SESSION['gudang_id'];
+                header('Refresh: 1.5; URL=operator_dashboard.php');
                 exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
@@ -52,8 +49,6 @@
         }
         
         $conn->close();
-
-
         ?>
     </div>
 </body>
