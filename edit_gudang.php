@@ -73,14 +73,14 @@ $conn->close();
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-left: auto; /* Menempatkan konten ke kanan */
+            margin-left: 20%;
         }
 
         h2, h3 {
             color: #333;
-            font-size: 1.2em; /* Ukuran teks sedikit lebih besar */
-            text-align: right; /* Menggeser teks ke kanan */
-            margin-right: 20px; /* Menambah margin kanan */
+            font-size: 1.2em;
+            text-align: justify; 
+
         }
 
         form {
@@ -143,7 +143,7 @@ $conn->close();
     </style>
 </head>
 <body>
-    <div class="container"> <!-- Menggunakan class container -->
+    <div class="container"> 
         <h2>Edit Gudang <?php echo $gudangId; ?></h2>
         <form action="" method="post">
             <label for="penyewa">Nama Penyewa:</label>
