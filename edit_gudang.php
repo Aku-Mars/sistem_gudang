@@ -164,6 +164,7 @@ $conn->close();
                 <tr>
                     <th>Nama Barang</th>
                     <th>Jumlah</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -171,6 +172,12 @@ $conn->close();
                     <tr>
                         <td><?php echo $b['nama_barang']; ?></td>
                         <td><?php echo $b['jumlah']; ?></td>
+                        <td>
+                            <form action="hapus_barang.php" method="post">
+                                <input type="hidden" name="barang_id" value="<?php echo $b['id']; ?>">
+                                <button type="submit">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -190,7 +197,3 @@ $conn->close();
     </div>
 </body>
 </html>
-
-
-
-
