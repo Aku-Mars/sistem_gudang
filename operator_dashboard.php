@@ -7,6 +7,18 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
     exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $lokasi = $_POST['lokasi'];
+
+    $sql = "INSERT INTO gudang (lokasi) VALUES ('$lokasi')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Gudang berhasil dibuat";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
 $sql = "SELECT * FROM gudang";
 $result = $conn->query($sql);
 
@@ -35,6 +47,14 @@ $conn->close();
             <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
         <?php endforeach; ?>
     </ul>
+
+    <h3>Buat Gudang Baru:</h3>
+    <form action="" method="post">
+        <label for="lokasi">Lokasi:</label>
+        <input type="text" name="lokasi" id="lokasi" required>
+        <button type="submit">Buat Gudang Baru</button>
+    </form>
+
     <a href="index.php">Keluar</a>
 </body>
 </html>
