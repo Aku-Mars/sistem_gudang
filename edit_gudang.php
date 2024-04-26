@@ -65,6 +65,9 @@ $conn->close();
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-image: url('https://jubelio.com/wp-content/uploads/2022/02/jubelio-blog-masalah-manajemen-gudang.jpg');
+            background-size: cover; 
+            background-position: center;
         }
 
         .container {
