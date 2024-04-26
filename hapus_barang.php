@@ -20,23 +20,6 @@
             border-radius: 5px;
             background-color: #f3f3f3;
         }
-
-        .button {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
@@ -52,25 +35,24 @@
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $barangId = $_POST['barang_id'];
+            $gudangId = $_POST['gudang_id'];
+            $nama_barang = $_POST['nama_barang'];
+            $jumlah_barang = $_POST['jumlah_barang'];
 
             $sql = "DELETE FROM barang WHERE id=$barangId";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Barang berhasil dihapus";
-                // Periksa apakah $_SESSION['gudang_id'] memiliki nilai
-                if (isset($_SESSION['gudang_id']) && $_SESSION['gudang_id'] !== '') {
-                    $gudangId = $_SESSION['gudang_id'];
-                    header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
-                    exit;
-                } else {
-                    echo "Gudang ID tidak valid";
-                }
+                $gudangId = $_SESSION['gudang_id'];
+                exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         }
         
         $conn->close();
+
+        header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
         ?>
     </div>
 </body>
