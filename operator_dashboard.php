@@ -68,33 +68,21 @@ $conn->close();
         }
 
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 20px; 
+            display: flex; 
+            align-items: center; 
         }
 
-        ul li a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #999; 
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        ul li a:hover {
-            background-color: #ccc; 
-        }
-
-        .thumbnail {
-            width: 100px;
-            height: 100px;
-            border-radius: 5px;
+        ul li .thumbnail {
+            width: 120px;
+            height: 120px; 
+            border-radius: 10px; 
             overflow: hidden;
             margin-right: 20px;
             border: 2px solid #999;
         }
 
-        .thumbnail img {
+        ul li .thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -148,7 +136,7 @@ $conn->close();
             <?php foreach ($gudangs as $gudang): ?>
                 <li>
                     <div class="thumbnail">
-                    <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
+                        <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
                     <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a>
                 </li>
@@ -166,3 +154,4 @@ $conn->close();
     </div>
 </body>
 </html>
+
