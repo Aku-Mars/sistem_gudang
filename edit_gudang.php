@@ -57,8 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gudang['tanggal_akhir_sewa'] = $_POST['tanggal_akhir_sewa'];
     $gudang['lokasi'] = $_POST['lokasi'];
 
-    // Simpan data gudang yang diperbarui ke sumber data (misalnya database atau array)
-    // Di sini Anda bisa melakukan penyimpanan data ke database atau array yang sesuai
+    // Simpan data gudang yang diperbarui ke dalam session
+    $_SESSION['gudang'][$gudangId] = $gudang;
 }
 
 // Proses penambahan barang baru
@@ -74,8 +74,8 @@ if (isset($_POST['tambah_barang'])) {
         'jumlah' => $jumlah_barang
     );
 
-    // Simpan data gudang yang diperbarui ke sumber data (misalnya database atau array)
-    // Di sini Anda bisa melakukan penyimpanan data ke database atau array yang sesuai
+    // Simpan data gudang yang diperbarui ke dalam session
+    $_SESSION['gudang'][$gudangId] = $gudang;
 }
 
 ?>
@@ -86,7 +86,6 @@ if (isset($_POST['tambah_barang'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Gudang</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Edit Gudang <?php echo $gudangId; ?></h2>
