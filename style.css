@@ -1,8 +1,66 @@
+/* style.css */
+
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #28a745;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation styles */
+nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    background-color: #28a745;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Login page styles */
 .login-container {
     max-width: 300px;
     margin: 100px auto;
@@ -10,26 +68,171 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
 }
 
-input[type="text"],
-input[type="password"],
-button {
-    display: flex;
-    width: 80%;
+.login-container h2 {
+    text-align: center;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"],
+.login-container button {
+    display: block;
+    width: 100%;
     margin-bottom: 10px;
     padding: 10px;
-    border-radius: 15px;
 }
 
-button {
-    background-color: #007bff;
+.login-container button {
+    background-color: #28a745;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #0056b3;
+.login-container button:hover {
+    background-color: #218838;
+}
+
+/* User dashboard styles */
+.dashboard-container {
+    padding: 20px;
+}
+
+.dashboard-container h2 {
+    text-align: center;
+}
+
+.dashboard-container p {
+    margin-bottom: 10px;
+}
+
+.dashboard-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-container th,
+.dashboard-container td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.dashboard-container th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+}
+
+.dashboard-container a {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dashboard-container a:hover {
+    text-decoration: underline;
+}
+
+/* Operator dashboard styles */
+.operator-dashboard-container {
+    padding: 20px;
+}
+
+.operator-dashboard-container h2 {
+    text-align: center;
+}
+
+.operator-dashboard-container ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.operator-dashboard-container ul li {
+    margin-bottom: 10px;
+}
+
+.operator-dashboard-container ul li a {
+    display: block;
+    padding: 10px;
+    background-color: #f2f2f2;
+    color: #28a745;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.operator-dashboard-container ul li a:hover {
+    background-color: #e2e2e2;
+}
+
+.operator-dashboard-container form {
+    margin-top: 20px;
+}
+
+.operator-dashboard-container form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.operator-dashboard-container form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.operator-dashboard-container form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.operator-dashboard-container form button:hover {
+    background-color: #218838;
+}
+
+/* Add user page styles */
+.add-user-container {
+    max-width: 300px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-user-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-user-container input[type="text"],
+.add-user-container input[type="password"],
+.add-user-container select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.add-user-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-user-container button:hover {
+    background-color: #218838;
 }
