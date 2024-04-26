@@ -92,7 +92,7 @@ $conn->close();
         }
 
         input[type="text"] {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -112,6 +112,11 @@ $conn->close();
 
         button[type="submit"]:hover, a.button:hover {
             background-color: #0056b3;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -137,3 +142,4 @@ $conn->close();
     </div>
 </body>
 </html>
+
