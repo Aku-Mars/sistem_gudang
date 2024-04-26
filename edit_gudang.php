@@ -58,7 +58,74 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Gudang</title>
-    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"], a.button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover, a.button:hover {
+            background-color: #0056b3;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <h2>Edit Gudang <?php echo $gudangId; ?></h2>
@@ -75,7 +142,7 @@ $conn->close();
     </form>
 
     <h3>List Barang:</h3>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>Nama Barang</th>
@@ -102,6 +169,7 @@ $conn->close();
         <button type="submit">Tambah Barang</button>
     </form>
 
-    <a href="operator_dashboard.php">Kembali</a>
+    <a href="operator_dashboard.php" class="button">Kembali</a>
 </body>
 </html>
+

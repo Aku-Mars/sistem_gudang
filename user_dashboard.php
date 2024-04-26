@@ -38,10 +38,10 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <style>
-        /* Styling untuk user_dashboard.php */
+       
         body {
             font-family: Arial, sans-serif;
-            background-color: #ffffff; /* Warna background putih */
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
         }
@@ -50,21 +50,21 @@ $conn->close();
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #ffffff; /* Warna background putih */
+            background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #009900; /* Warna teks hijau */
+            color: #009900; 
         }
 
         h3 {
-            color: #333333; /* Warna teks hitam */
+            color: #333333; 
         }
 
         p {
-            color: #666666; /* Warna teks abu-abu */
+            color: #666666; 
         }
 
         table {
@@ -74,18 +74,18 @@ $conn->close();
         }
 
         th, td {
-            border: 1px solid #cccccc; /* Warna border abu-abu */
+            border: 1px solid #cccccc; 
             padding: 8px;
             text-align: left;
         }
 
         th {
-            background-color: #f2f2f2; /* Warna background abu-abu muda */
+            background-color: #f2f2f2; 
         }
 
         a.button {
-            background-color: #009900; /* Warna background hijau */
-            color: #ffffff; /* Warna teks putih */
+            background-color: #009900; 
+            color: #ffffff; 
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
@@ -93,7 +93,7 @@ $conn->close();
         }
 
         a.button:hover {
-            background-color: #007700; /* Warna background hijau yang sedikit lebih gelap */
+            background-color: #007700;
         }
     </style>
 </head>
