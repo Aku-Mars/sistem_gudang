@@ -44,7 +44,7 @@ $conn->close();
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/02/sop-gudang-logistik-hashmicro-1-265x198.jpg');
+            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/01/picking-and-packing-2-scaled.jpg');
             background-size: cover; 
             background-position: center;
         }
@@ -148,7 +148,7 @@ $conn->close();
             <?php foreach ($gudangs as $gudang): ?>
                 <li>
                     <div class="thumbnail">
-                        <img src="gambar/<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
+                    <img src="<?php echo $gambarUrl; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
                     <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a>
                 </li>
