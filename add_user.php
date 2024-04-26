@@ -21,6 +21,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->close();
 }
+
+// Ambil data gudang dari database
+$sql = "SELECT id, nama FROM gudang";
+$result = $conn->query($sql);
+$gudangOptions = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $gudangOptions[] = $row;
+    }
+}
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </select>
             <select name="gudang_id" id="gudang" style="display: none;" required>
                 <option value="" disabled selected>Pilih Gudang</option>
+                <?php foreach ($gudangOptions as $option): ?>
+                    <option value="<?php echo $option['id']; ?>"><?php echo $option['nama']; ?></option>
+                <?php endforeach; ?>
             </select>
             <button type="submit">Tambah Pengguna</button>
         </form>
@@ -53,22 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             var gudangSelect = document.getElementById("gudang");
             if (role === "user") {
                 gudangSelect.style.display = "block";
-                // Load options for gudang select
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "get_gudang_options.php", true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        var gudangOptions = JSON.parse(xhr.responseText);
-                        gudangSelect.innerHTML = ""; // Clear existing options
-                        gudangOptions.forEach(function(option) {
-                            var optionElement = document.createElement("option");
-                            optionElement.value = option.id;
-                            optionElement.textContent = option.nama;
-                            gudangSelect.appendChild(optionElement);
-                        });
-                    }
-                };
-                xhr.send();
             } else {
                 gudangSelect.style.display = "none";
             }
