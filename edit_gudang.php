@@ -7,16 +7,7 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
     exit;
 }
 
-// Periksa apakah parameter ID gudang telah diberikan
-if (!isset($_GET['id'])) {
-    echo "ID gudang tidak ditemukan";
-    exit;
-}
-
-// Ambil ID gudang dari parameter URL
-$gudangId = $_GET['id'];
-
-// Simpan data gudang dalam array (contoh)
+// Data dummy gudang (contoh)
 $gudangData = array(
     1 => array(
         'penyewa' => 'Penyewa A',
@@ -39,6 +30,15 @@ $gudangData = array(
         )
     )
 );
+
+// Periksa apakah parameter ID gudang telah diberikan
+if (!isset($_GET['id'])) {
+    echo "ID gudang tidak ditemukan";
+    exit;
+}
+
+// Ambil ID gudang dari parameter URL
+$gudangId = $_GET['id'];
 
 // Periksa apakah ID gudang valid
 if (!isset($gudangData[$gudangId])) {
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Edit Gudang</title>
 </head>
 <body>
-    <h2>Edit Gudang</h2>
+    <h2>Edit Gudang <?php echo $gudangId; ?></h2>
     <form action="" method="post">
         <label for="penyewa">Nama Penyewa:</label>
         <input type="text" name="penyewa" id="penyewa" value="<?php echo $gudang['penyewa']; ?>" required>
@@ -83,5 +83,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="lokasi" id="lokasi" value="<?php echo $gudang['lokasi']; ?>" required>
         <button type="submit">Simpan Perubahan</button>
     </form>
+
+    <h3>List Barang:</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nama Barang</th>
+                <th>ID Barang</th>
+                <th>Jumlah</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($gudang['barang'] as $index => $barang): ?>
+                <tr>
+                    <td><?php echo $index + 1; ?></td>
+                    <td><?php echo $barang['nama']; ?></td>
+                    <td><?php echo $barang['id']; ?></td>
+                    <td><?php echo $barang['jumlah']; ?></td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Hapus</button>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>
