@@ -54,18 +54,6 @@ $conn->close();
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        header, footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #f4f4f4;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        header h1, footer p {
-            margin: 0;
-        }
-
         h2, h3 {
             color: #333;
         }
@@ -82,7 +70,7 @@ $conn->close();
         ul li a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #FFFF00; /* Warna abu-abu */
+            background-color: #ccc; /* Warna abu-abu */
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -90,7 +78,7 @@ $conn->close();
         }
 
         ul li a:hover {
-            background-color: #ccc; /* Warna abu-abu yang lebih gelap saat dihover */
+            background-color: #999; /* Warna abu-abu yang lebih gelap saat dihover */
         }
 
         form {
@@ -133,16 +121,13 @@ $conn->close();
     </style>
 </head>
 <body>
-    <header>
-        <h1>Sistem Penyewaan Gudang</h1>
-    </header>
     <div class="container">
         <h2>Selamat datang, Operator!</h2>
         
         <h3>Pilih Gudang:</h3>
         <ul>
             <?php foreach ($gudangs as $gudang): ?>
-                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>" style="background-color: #ccc;"><?php echo $gudang['lokasi']; ?></a></li>
+                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
             <?php endforeach; ?>
         </ul>
 
@@ -155,11 +140,9 @@ $conn->close();
 
         <a href="index.php" class="button">Keluar</a>
     </div>
-    <footer>
-        <p>&copy; 2024 Sistem Penyewaan Gudang. All rights reserved.</p>
-    </footer>
 </body>
 </html>
+
 
 
 
