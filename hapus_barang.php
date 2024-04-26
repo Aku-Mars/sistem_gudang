@@ -57,7 +57,7 @@
 
             if ($conn->query($sql) === TRUE) {
                 // Jika penghapusan berhasil, arahkan pengguna kembali ke halaman edit gudang
-                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $_SESSION['gudang_id']);
+                header('Refresh: 1.5; URL=edit_gudang.php' . $_SESSION['gudang_id']);
                 echo "Barang berhasil dihapus";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
