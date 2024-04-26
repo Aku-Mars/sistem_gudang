@@ -53,7 +53,7 @@
                 // Set $_SESSION['gudang_id'] sebelum mengarahkan pengguna kembali
                 $_SESSION['gudang_id'] = $gudangId;
                 // Mengarahkan kembali ke halaman sebelumnya setelah 1.5 detik
-                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
+                echo '<meta http-equiv="refresh" content="1.5;url=edit_gudang.php?id=' . $gudangId . '" />';
                 exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
