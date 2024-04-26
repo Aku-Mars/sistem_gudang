@@ -89,7 +89,7 @@ $conn->close();
         }
 
         ul li .button {
-            background-color: #999;
+            background-color: #ccc;
             color: #333; 
             padding: 10px 20px;
             border: none;
@@ -100,7 +100,7 @@ $conn->close();
         }
 
         ul li .button:hover {
-            background-color: #ccc;
+            background-color: #999;
         }
 
         form {
@@ -153,7 +153,7 @@ $conn->close();
                     <div class="thumbnail">
                         <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
-                    <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"> <?php echo $gudang['lokasi']; ?> <class="button"></a>
+                    <button class="button" onclick="location.href='edit_gudang.php?id=<?php echo $gudang['id']; ?>'"><?php echo $gudang['lokasi']; ?></button>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -169,5 +169,6 @@ $conn->close();
     </div>
 </body>
 </html>
+
 
 
