@@ -1,35 +1,28 @@
 <?php
 session_start();
 
-// Periksa apakah pengguna sudah login sebagai operator
-if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
-    header('Location: index.php');
+if ($_SESSION['role'] != 'operator') {
+    header('Location: index.html');
     exit;
 }
 
-// Data dummy gudang (contoh)
-$gudangData = array(
-    1 => array(
-        'penyewa' => 'Penyewa A',
-        'tanggal_sewa' => '2024-04-27',
-        'tanggal_akhir_sewa' => '2024-05-27',
-        'lokasi' => 'Lokasi A',
-        'barang' => array(
-            array('nama' => 'Barang 1', 'id' => '1', 'jumlah' => 5),
-            array('nama' => 'Barang 2', 'id' => '2', 'jumlah' => 10)
-        )
-    ),
-    2 => array(
-        'penyewa' => 'Penyewa B',
-        'tanggal_sewa' => '2024-04-28',
-        'tanggal_akhir_sewa' => '2024-05-28',
-        'lokasi' => 'Lokasi B',
-        'barang' => array(
-            array('nama' => 'Barang 3', 'id' => '3', 'jumlah' => 8),
-            array('nama' => 'Barang 4', 'id' => '4', 'jumlah' => 12)
-        )
-    )
-);
+// Koneksi ke database MySQL
+$servername = "localhost";
+$username = "operator"; // Ganti dengan nama pengguna MySQL Anda
+$password = "password123"; // Ganti dengan kata sandi MySQL Anda
+$dbname = "penyewaan_gudang";
+
+// Buat koneksi
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil informasi gudang
+$sql = "SELECT * FROM gudang";
+$result = $conn->query($sql);
 
 ?>
 
@@ -39,16 +32,30 @@ $gudangData = array(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operator Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h2>Selamat datang, Operator!</h2>
-    
-    <h3>Pilih Gudang:</h3>
-    <ul>
-        <li><a href="edit_gudang.php?id=1">Gudang 1</a></li>
-        <li><a href="edit_gudang.php?id=2">Gudang 2</a></li>
-        <!-- Tambahkan gudang lain jika ada -->
-    </ul>
-    <a href="index.php">Keluar</a>
+    <div class="dashboard-container">
+        <h2>Operator Dashboard</h2>
+        <!-- Tampilkan informasi gudang -->
+        <ul>
+        <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<li>ID: " . $row["id"]. " - Nama Gudang: " . $row["nama_gudang"]. " - Lokasi: " . $row["lokasi"]. "</li>";
+                // Anda bisa menambahkan informasi lainnya di sini
+            }
+        } else {
+            echo "Tidak ada data gudang";
+        }
+        ?>
+        </ul>
+    </div>
 </body>
 </html>
+
+<?php
+// Tutup koneksi
+$conn->close();
+?>
