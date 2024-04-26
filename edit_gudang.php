@@ -145,7 +145,8 @@ $conn->close();
 </head>
 <body>
     <div class="container"> 
-        <h2>Edit Gudang <?php echo $gudangId; ?></h2>
+        <h2>Edit Gudang <?php echo $gudangLokasi; ?></h2>
+        <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
         <form action="" method="post">
             <label for="penyewa">Nama Penyewa:</label>
             <input type="text" name="penyewa" id="penyewa" value="<?php echo $gudang['penyewa']; ?>" required>
