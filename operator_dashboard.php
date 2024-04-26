@@ -105,6 +105,24 @@ $conn->close();
             background-color: #f4f4f4;
             border-top: 1px solid #ccc;
         }
+
+        /* CSS untuk tombol */
+        button[type="submit"],
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover,
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -141,7 +159,7 @@ $conn->close();
 
             <div class="create-user">
                 <h3>Membuat User Baru:</h3>
-                <a href="add_user.php">Buat User</a>
+                <a href="add_user.php" class="button">Buat User</a>
             </div>
         </div>
     </div>
@@ -150,4 +168,5 @@ $conn->close();
     </footer>
 </body>
 </html>
+
 
