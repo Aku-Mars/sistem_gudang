@@ -67,30 +67,12 @@ $conn->close();
         <button type="submit">Simpan Perubahan</button>
     </form>
 
-    <h4>List Barang:</h4>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Nama Barang</th>
-                    <th>ID Barang</th>
-                    <th>Jumlah</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($gudang['barang'] as $index => $barang): ?>
-                    <tr>
-                        <td><?php echo $index + 1; ?></td>
-                        <td><?php echo $barang['nama']; ?></td>
-                        <td><?php echo $barang['id']; ?></td>
-                        <td><?php echo $barang['jumlah']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Gudang tidak ditemukan untuk pengguna ini.</p>
-    <?php endif; ?>
+    <h3>List Barang:</h3>
+    <ul>
+        <?php foreach ($barang as $b): ?>
+            <li><?php echo $b['nama']; ?> - Jumlah: <?php echo $b['jumlah']; ?></li>
+        <?php endforeach; ?>
+    </ul>
 
     <h3>Tambah Barang Baru:</h3>
     <form action="" method="post">
