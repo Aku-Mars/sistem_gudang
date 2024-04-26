@@ -1,47 +1,41 @@
 <?php
 session_start();
-
-// Data operator dan user
-$users = array(
-    'operator' => array(
-        'username' => 'operator',
-        'password' => 'password123',
-        'role' => 'operator'
-    ),
-    'user1' => array(
-        'username' => 'user1',
-        'password' => 'user123',
-        'role' => 'user',
-        'gudang' => 1
-    ),
-    'user2' => array(
-        'username' => 'user2',
-        'password' => 'user456',
-        'role' => 'user',
-        'gudang' => 2
-    )
-);
+include 'db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Periksa kecocokan username dan password
-    if (isset($users[$username]) && $users[$username]['password'] === $password) {
-        $_SESSION['username'] = $username;
-        $_SESSION['role'] = $users[$username]['role'];
-        $_SESSION['gudang'] = isset($users[$username]['gudang']) ? $users[$username]['gudang'] : null;
+    $stmt = $conn->prepare("SELECT id, username, password, role, gudang_id FROM users WHERE username = ?");
+    $stmt->bind_param("s", $username);
 
-        // Redirect sesuai peran (role)
-        if ($_SESSION['role'] === 'operator') {
-            header('Location: operator_dashboard.php');
-        } elseif ($_SESSION['role'] === 'user') {
-            header('Location: user_dashboard.php');
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows == 1) {
+        $stmt->bind_result($id, $username, $hashed_password, $role, $gudang_id);
+        $stmt->fetch();
+
+        if (password_verify($password, $hashed_password)) {
+            $_SESSION['id'] = $id;
+            $_SESSION['username'] = $username;
+            $_SESSION['role'] = $role;
+            $_SESSION['gudang_id'] = $gudang_id;
+
+            if ($role === 'operator') {
+                header('Location: operator_dashboard.php');
+            } elseif ($role === 'user') {
+                header('Location: user_dashboard.php');
+            }
+            exit;
+        } else {
+            echo "Username atau password salah";
         }
-        exit;
     } else {
         echo "Username atau password salah";
     }
+
+    $stmt->close();
 }
 ?>
 <!DOCTYPE html>
