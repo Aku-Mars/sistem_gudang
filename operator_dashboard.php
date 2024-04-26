@@ -49,5 +49,6 @@ $gudangData = array(
         <li><a href="edit_gudang.php?id=2">Gudang 2</a></li>
         <!-- Tambahkan gudang lain jika ada -->
     </ul>
+    <a href="index.php">Keluar</a>
 </body>
 </html>

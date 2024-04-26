@@ -7,30 +7,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
     exit;
 }
 
-// Data dummy gudang (contoh)
-$gudangData = array(
-    1 => array(
-        'penyewa' => 'Penyewa A',
-        'tanggal_sewa' => '2024-04-27',
-        'tanggal_akhir_sewa' => '2024-05-27',
-        'lokasi' => 'Lokasi A',
-        'barang' => array(
-            array('nama' => 'Barang 1', 'id' => '1', 'jumlah' => 5),
-            array('nama' => 'Barang 2', 'id' => '2', 'jumlah' => 10)
-        )
-    ),
-    2 => array(
-        'penyewa' => 'Penyewa B',
-        'tanggal_sewa' => '2024-04-28',
-        'tanggal_akhir_sewa' => '2024-05-28',
-        'lokasi' => 'Lokasi B',
-        'barang' => array(
-            array('nama' => 'Barang 3', 'id' => '3', 'jumlah' => 8),
-            array('nama' => 'Barang 4', 'id' => '4', 'jumlah' => 12)
-        )
-    )
-);
-
 // Periksa apakah parameter ID gudang telah diberikan
 if (!isset($_GET['id'])) {
     echo "ID gudang tidak ditemukan";
@@ -49,7 +25,6 @@ if (!isset($gudangData[$gudangId])) {
 // Ambil data gudang yang akan diedit
 $gudang = $gudangData[$gudangId];
 
-// Proses form edit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data yang diubah dari form
     $gudang['penyewa'] = $_POST['penyewa'];
@@ -76,8 +51,11 @@ if (isset($_POST['tambah_barang'])) {
 
     // Simpan data gudang yang diperbarui ke dalam session
     $_SESSION['gudang'][$gudangId] = $gudang;
-}
 
+    // Arahkan kembali pengguna ke halaman operator_dashboard.php setelah menambah barang
+    header('Location: operator_dashboard.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -139,7 +117,6 @@ if (isset($_POST['tambah_barang'])) {
         <button type="submit" name="tambah_barang">Tambah Barang</button>
     </form>
 
-        <!-- Tombol Kembali -->
         <a href="operator_dashboard.php">Kembali</a>
 </body>
 </html>

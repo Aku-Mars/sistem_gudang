@@ -7,30 +7,6 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'user') {
     exit;
 }
 
-// Data dummy gudang (contoh)
-$gudangData = array(
-    1 => array(
-        'penyewa' => 'Penyewa A',
-        'tanggal_sewa' => '2024-04-27',
-        'tanggal_akhir_sewa' => '2024-05-27',
-        'lokasi' => 'Lokasi A',
-        'barang' => array(
-            array('nama' => 'Barang 1', 'id' => '1', 'jumlah' => 5),
-            array('nama' => 'Barang 2', 'id' => '2', 'jumlah' => 10)
-        )
-    ),
-    2 => array(
-        'penyewa' => 'Penyewa B',
-        'tanggal_sewa' => '2024-04-28',
-        'tanggal_akhir_sewa' => '2024-05-28',
-        'lokasi' => 'Lokasi B',
-        'barang' => array(
-            array('nama' => 'Barang 3', 'id' => '3', 'jumlah' => 8),
-            array('nama' => 'Barang 4', 'id' => '4', 'jumlah' => 12)
-        )
-    )
-);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,5 +44,7 @@ $gudangData = array(
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <a href="index.php">Keluar</a>
 </body>
 </html>
