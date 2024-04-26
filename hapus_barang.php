@@ -42,6 +42,7 @@
             $sql = "DELETE FROM barang WHERE id=$barangId";
 
             if ($conn->query($sql) === TRUE) {
+                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
                 echo "Barang berhasil dihapus";
                 $gudangId = $_SESSION['gudang_id'];
                 exit;
@@ -52,7 +53,7 @@
         
         $conn->close();
 
-        header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
+
         ?>
     </div>
 </body>
