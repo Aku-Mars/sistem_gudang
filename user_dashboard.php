@@ -31,6 +31,9 @@ $gudangData = array(
     )
 );
 
+// Ambil ID gudang yang terkait dengan pengguna
+$userGudangId = isset($_SESSION['gudang']) ? $_SESSION['gudang'] : null;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,33 +44,38 @@ $gudangData = array(
 </head>
 <body>
     <h2>Selamat datang, User!</h2>
-    <h3>Gudang Anda</h3>
-    <p>Nama Penyewa: <?php echo $gudangData[1]['penyewa']; ?></p>
-    <p>Tanggal Sewa: <?php echo $gudangData[1]['tanggal_sewa']; ?></p>
-    <p>Tanggal Akhir Sewa: <?php echo $gudangData[1]['tanggal_akhir_sewa']; ?></p>
-    <p>Lokasi: <?php echo $gudangData[1]['lokasi']; ?></p>
-    
-    <h4>List Barang:</h4>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nama Barang</th>
-                <th>ID Barang</th>
-                <th>Jumlah</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($gudangData[1]['barang'] as $index => $barang): ?>
+
+    <?php if ($userGudangId && isset($gudangData[$userGudangId])): ?>
+        <h3>Gudang Anda</h3>
+        <p>Nama Penyewa: <?php echo $gudangData[$userGudangId]['penyewa']; ?></p>
+        <p>Tanggal Sewa: <?php echo $gudangData[$userGudangId]['tanggal_sewa']; ?></p>
+        <p>Tanggal Akhir Sewa: <?php echo $gudangData[$userGudangId]['tanggal_akhir_sewa']; ?></p>
+        <p>Lokasi: <?php echo $gudangData[$userGudangId]['lokasi']; ?></p>
+        
+        <h4>List Barang:</h4>
+        <table border="1">
+            <thead>
                 <tr>
-                    <td><?php echo $index + 1; ?></td>
-                    <td><?php echo $barang['nama']; ?></td>
-                    <td><?php echo $barang['id']; ?></td>
-                    <td><?php echo $barang['jumlah']; ?></td>
+                    <th>No.</th>
+                    <th>Nama Barang</th>
+                    <th>ID Barang</th>
+                    <th>Jumlah</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($gudangData[$userGudangId]['barang'] as $index => $barang): ?>
+                    <tr>
+                        <td><?php echo $index + 1; ?></td>
+                        <td><?php echo $barang['nama']; ?></td>
+                        <td><?php echo $barang['id']; ?></td>
+                        <td><?php echo $barang['jumlah']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p>Gudang tidak ditemukan untuk pengguna ini.</p>
+    <?php endif; ?>
 
     <a href="index.php">Keluar</a>
 </body>
