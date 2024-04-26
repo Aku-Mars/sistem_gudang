@@ -34,26 +34,17 @@
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Ambil gudang_id dan barang_id dari $_POST
             $barangId = $_POST['barang_id'];
             $gudangId = $_POST['gudang_id'];
+            $nama_barang = $_POST['nama_barang'];
+            $jumlah_barang = $_POST['jumlah_barang'];
 
-            // Pastikan gudang dengan ID yang dimaksud ada
-            $sql = "SELECT * FROM gudang WHERE id=$gudangId";
-            $result = $conn->query($sql);
-            if ($result->num_rows == 0) {
-                echo "Gudang tidak ditemukan";
-                exit;
-            }
-
-            // Lakukan penghapusan barang
             $sql = "DELETE FROM barang WHERE id=$barangId";
+
             if ($conn->query($sql) === TRUE) {
+                header('Refresh: 1.5; URL=operator_dashboard.php');
                 echo "Barang berhasil dihapus";
-                // Set $_SESSION['gudang_id'] sebelum mengarahkan pengguna kembali
-                $_SESSION['gudang_id'] = $gudangId;
-                // Mengarahkan kembali ke halaman sebelumnya setelah 1.5 detik
-                echo '<meta http-equiv="refresh" content="1.5;url=edit_gudang.php?id=' . $gudangId . '" />';
+                $gudangId = $_SESSION['gudang_id'];
                 exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
@@ -61,6 +52,8 @@
         }
         
         $conn->close();
+
+
         ?>
     </div>
 </body>
