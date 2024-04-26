@@ -9,30 +9,80 @@ body {
     background-color: #f4f4f4;
 }
 
-.login-container {
-    background-color: #fff;
+.container {
+    max-width: 600px;
+    margin: 20px;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
 }
 
 input[type="text"],
 input[type="password"],
+input[type="date"],
 button {
-    display: block;
     width: 100%;
-    margin-bottom: 10px;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 button {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
