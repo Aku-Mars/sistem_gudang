@@ -66,7 +66,6 @@
 
         $conn->close();
         ?>
-        <a href="edit_gudang.php?id=<?php echo $_SESSION['gudang_id']; ?>" class="button">Kembali ke Halaman Edit Gudang</a>
     </div>
 </body>
 </html>
