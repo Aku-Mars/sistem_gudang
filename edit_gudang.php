@@ -80,11 +80,16 @@ $conn->close();
             margin-left: 20%;
         }
 
-        h2, h3 {
+        h2 {
+            color: #333;
+            font-size: 1.2em;
+            text-align: center; 
+        }
+
+        h3 {
             color: #333;
             font-size: 1.2em;
             text-align: justify; 
-
         }
 
         form {
@@ -148,7 +153,7 @@ $conn->close();
 </head>
 <body>
     <div class="container"> 
-        <h2>Edit Gudang <?php echo $gudangLokasi; ?></h2>
+        <h2>SEKETARIS GUDANG</h2>
         <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
         <form action="" method="post">
             <label for="penyewa">Nama Penyewa:</label>

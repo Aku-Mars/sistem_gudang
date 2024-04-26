@@ -60,7 +60,8 @@ $conn->close();
         }
 
         h2 {
-            color: #009900; 
+            color: #009900;
+            text-align: center; 
         }
 
         h3 {
