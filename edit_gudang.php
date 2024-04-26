@@ -74,11 +74,22 @@ $conn->close();
     </form>
 
     <h3>List Barang:</h3>
-    <ul>
-        <?php foreach ($barang as $b): ?>
-            <li><?php echo $b['nama_barang']; ?> - Jumlah: <?php echo $b['jumlah']; ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama Barang</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($barang as $b): ?>
+                <tr>
+                    <td><?php echo $b['nama_barang']; ?></td>
+                    <td><?php echo $b['jumlah']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 
     <h3>Tambah Barang Baru:</h3>
     <form action="tambah_barang.php" method="post">
