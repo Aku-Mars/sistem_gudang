@@ -32,6 +32,7 @@ $gudangData = array(
 );
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,49 +42,12 @@ $gudangData = array(
 </head>
 <body>
     <h2>Selamat datang, Operator!</h2>
-    <h3>Gudang 1</h3>
-    <p>Nama Penyewa: <?php echo $gudangData[1]['penyewa']; ?></p>
-    <p>Tanggal Sewa: <?php echo $gudangData[1]['tanggal_sewa']; ?></p>
-    <p>Tanggal Akhir Sewa: <?php echo $gudangData[1]['tanggal_akhir_sewa']; ?></p>
-    <p>Lokasi: <?php echo $gudangData[1]['lokasi']; ?></p>
     
-    <h4>List Barang:</h4>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nama Barang</th>
-                <th>ID Barang</th>
-                <th>Jumlah</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($gudangData[1]['barang'] as $index => $barang): ?>
-                <tr>
-                    <td><?php echo $index + 1; ?></td>
-                    <td><?php echo $barang['nama']; ?></td>
-                    <td><?php echo $barang['id']; ?></td>
-                    <td><?php echo $barang['jumlah']; ?></td>
-                    <td>
-                        <button>Edit</button>
-                        <button>Hapus</button>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    
-    <!-- Form untuk menambahkan barang baru -->
-    <h4>Tambah Barang Baru:</h4>
-    <form action="tambah_barang.php" method="post">
-        <label for="nama_barang">Nama Barang:</label>
-        <input type="text" name="nama_barang" id="nama_barang" required>
-        <label for="id_barang">ID Barang:</label>
-        <input type="text" name="id_barang" id="id_barang" required>
-        <label for="jumlah_barang">Jumlah Barang:</label>
-        <input type="number" name="jumlah_barang" id="jumlah_barang" required>
-        <button type="submit">Tambah Barang</button>
-    </form>
+    <h3>Pilih Gudang:</h3>
+    <ul>
+        <li><a href="edit_gudang.php?id=1">Gudang 1</a></li>
+        <li><a href="edit_gudang.php?id=2">Gudang 2</a></li>
+        <!-- Tambahkan gudang lain jika ada -->
+    </ul>
 </body>
 </html>
