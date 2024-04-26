@@ -13,10 +13,6 @@ body {
     display: flex;
 }
 
-input {
-    border-radius: 15px;
-}
-
 input[type="text"],
 input[type="password"],
 button {
@@ -24,6 +20,7 @@ button {
     width: 80%;
     margin-bottom: 10px;
     padding: 10px;
+    border-radius: 15px;
 }
 
 button {
