@@ -82,24 +82,15 @@ $conn->close();
         ul li a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #ccc; 
+            background-color: #ccc; /* Warna abu-abu */
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
-            position: relative;
-        }
-
-        ul li a::after {
-            content: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtAa9oeyNh3BSbyCnRFEODDrGYMqvoxFKIhf00B4IIZQ&s'); 
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         ul li a:hover {
-            background-color: #999; 
+            background-color: #999; /* Warna abu-abu yang lebih gelap saat dihover */
         }
 
         form {
@@ -151,7 +142,7 @@ $conn->close();
         <h3>Pilih Gudang:</h3>
         <ul>
             <?php foreach ($gudangs as $gudang): ?>
-                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
+                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>" style="background-color: #ccc;"><?php echo $gudang['lokasi']; ?></a></li>
             <?php endforeach; ?>
         </ul>
 
@@ -169,5 +160,6 @@ $conn->close();
     </footer>
 </body>
 </html>
+
 
 
