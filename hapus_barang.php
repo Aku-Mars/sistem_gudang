@@ -39,8 +39,15 @@
             $nama_barang = $_POST['nama_barang'];
             $jumlah_barang = $_POST['jumlah_barang'];
 
-            $sql = "DELETE FROM barang WHERE id=$barangId";
+            // Pastikan gudang dengan ID yang dimaksud ada
+            $sql = "SELECT * FROM gudang WHERE id=$gudangId";
+            $result = $conn->query($sql);
+            if ($result->num_rows == 0) {
+                echo "Gudang tidak ditemukan";
+                exit;
+            }
 
+            $sql = "DELETE FROM barang WHERE id=$barangId";
             if ($conn->query($sql) === TRUE) {
                 header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
                 echo "Barang berhasil dihapus";
