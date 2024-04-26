@@ -1,39 +1,24 @@
 <?php
 session_start();
+include 'db_connection.php';
 
-// Periksa apakah pengguna sudah login sebagai user
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'user') {
     header('Location: index.php');
     exit;
 }
 
-// Data dummy gudang (contoh)
-$gudangData = array(
-    1 => array(
-        'penyewa' => 'Penyewa A',
-        'tanggal_sewa' => '2024-04-27',
-        'tanggal_akhir_sewa' => '2024-05-27',
-        'lokasi' => 'Lokasi A',
-        'barang' => array(
-            array('nama' => 'Barang 1', 'id' => '1', 'jumlah' => 5),
-            array('nama' => 'Barang 2', 'id' => '2', 'jumlah' => 10)
-        )
-    ),
-    2 => array(
-        'penyewa' => 'Penyewa B',
-        'tanggal_sewa' => '2024-04-28',
-        'tanggal_akhir_sewa' => '2024-05-28',
-        'lokasi' => 'Lokasi B',
-        'barang' => array(
-            array('nama' => 'Barang 3', 'id' => '3', 'jumlah' => 8),
-            array('nama' => 'Barang 4', 'id' => '4', 'jumlah' => 12)
-        )
-    )
-);
+$userGudangId = $_SESSION['gudang_id'];
 
-// Ambil ID gudang yang terkait dengan pengguna
-$userGudangId = isset($_SESSION['gudang']) ? $_SESSION['gudang'] : null;
+$sql = "SELECT * FROM gudang WHERE id = $userGudangId";
+$result = $conn->query($sql);
 
+if ($result->num_rows == 1) {
+    $gudang = $result->fetch_assoc();
+} else {
+    $gudang = null;
+}
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,12 +30,12 @@ $userGudangId = isset($_SESSION['gudang']) ? $_SESSION['gudang'] : null;
 <body>
     <h2>Selamat datang, User!</h2>
 
-    <?php if ($userGudangId && isset($gudangData[$userGudangId])): ?>
+    <?php if ($gudang): ?>
         <h3>Gudang Anda</h3>
-        <p>Nama Penyewa: <?php echo $gudangData[$userGudangId]['penyewa']; ?></p>
-        <p>Tanggal Sewa: <?php echo $gudangData[$userGudangId]['tanggal_sewa']; ?></p>
-        <p>Tanggal Akhir Sewa: <?php echo $gudangData[$userGudangId]['tanggal_akhir_sewa']; ?></p>
-        <p>Lokasi: <?php echo $gudangData[$userGudangId]['lokasi']; ?></p>
+        <p>Nama Penyewa: <?php echo $gudang['penyewa']; ?></p>
+        <p>Tanggal Sewa: <?php echo $gudang['tanggal_sewa']; ?></p>
+        <p>Tanggal Akhir Sewa: <?php echo $gudang['tanggal_akhir_sewa']; ?></p>
+        <p>Lokasi: <?php echo $gudang['lokasi']; ?></p>
         
         <h4>List Barang:</h4>
         <table border="1">
@@ -63,7 +48,7 @@ $userGudangId = isset($_SESSION['gudang']) ? $_SESSION['gudang'] : null;
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($gudangData[$userGudangId]['barang'] as $index => $barang): ?>
+                <?php foreach ($gudang['barang'] as $index => $barang): ?>
                     <tr>
                         <td><?php echo $index + 1; ?></td>
                         <td><?php echo $barang['nama']; ?></td>
