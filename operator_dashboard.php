@@ -46,69 +46,72 @@ $conn->close();
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ccc;
+        header, footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
-        header h1 {
+        header h1, footer p {
             margin: 0;
         }
 
-        nav ul {
+        h2, h3 {
+            color: #333;
+        }
+
+        ul {
             list-style-type: none;
-            margin: 0;
             padding: 0;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        .operator-dashboard-container {
-            margin-top: 20px;
-        }
-
-        .gudang-list ul {
-            padding: 0;
-            margin: 0;
-            list-style-type: none;
-        }
-
-        .gudang-list ul li {
+        ul li {
             margin-bottom: 10px;
         }
 
-        .create-gudang,
-        .create-user {
+        ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        form {
             margin-top: 20px;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px 0;
-            background-color: #f4f4f4;
-            border-top: 1px solid #ccc;
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
         }
 
-        /* CSS untuk tombol */
-        button[type="submit"],
-        .button {
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"], a.button {
             background-color: #007bff;
             color: #fff;
             border: none;
@@ -119,49 +122,38 @@ $conn->close();
             transition: background-color 0.3s ease;
         }
 
-        button[type="submit"]:hover,
-        .button:hover {
+        button[type="submit"]:hover, a.button:hover {
             background-color: #0056b3;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Sistem Penyewaan Gudang</h1>
+    </header>
     <div class="container">
-        <header>
-            <h1>Sistem Penyewaan Gudang</h1>
-            <nav>
-                <ul>
-                    <li><a href="operator_dashboard.php">Dashboard</a></li>
-                    <li><a href="index.php">Logout</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="operator-dashboard-container">
-            <h2>Selamat datang, Operator!</h2>
-            
-            <div class="gudang-list">
-                <h3>Pilih Gudang:</h3>
-                <ul>
-                    <?php foreach ($gudangs as $gudang): ?>
-                        <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
+        <h2>Selamat datang, Operator!</h2>
+        
+        <h3>Pilih Gudang:</h3>
+        <ul>
+            <?php foreach ($gudangs as $gudang): ?>
+                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
 
-            <div class="create-gudang">
-                <h3>Buat Gudang Baru:</h3>
-                <form action="" method="post">
-                    <label for="lokasi">Lokasi:</label>
-                    <input type="text" name="lokasi" id="lokasi" required>
-                    <button type="submit">Buat Gudang Baru</button>
-                </form>
-            </div>
+        <h3>Buat Gudang Baru:</h3>
+        <form action="" method="post">
+            <label for="lokasi">Lokasi:</label>
+            <input type="text" name="lokasi" id="lokasi" required>
+            <button type="submit">Buat Gudang Baru</button>
+        </form>
 
-            <div class="create-user">
-                <h3>Membuat User Baru:</h3>
-                <a href="add_user.php" class="button">Buat User</a>
-            </div>
-        </div>
+        <a href="index.php" class="button">Keluar</a>
     </div>
     <footer>
         <p>&copy; 2024 Sistem Penyewaan Gudang. All rights reserved.</p>
