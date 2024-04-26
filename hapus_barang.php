@@ -34,13 +34,20 @@
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Ambil gudang_id dan barang_id dari $_POST
             $barangId = $_POST['barang_id'];
-            $gudangId = $_POST['gudang_id']; // Simpan gudang_id sebelumnya
-            $nama_barang = $_POST['nama_barang'];
-            $jumlah_barang = $_POST['jumlah_barang'];
+            $gudangId = $_POST['gudang_id'];
 
+            // Pastikan gudang dengan ID yang dimaksud ada
+            $sql = "SELECT * FROM gudang WHERE id=$gudangId";
+            $result = $conn->query($sql);
+            if ($result->num_rows == 0) {
+                echo "Gudang tidak ditemukan";
+                exit;
+            }
+
+            // Lakukan penghapusan barang
             $sql = "DELETE FROM barang WHERE id=$barangId";
-
             if ($conn->query($sql) === TRUE) {
                 echo "Barang berhasil dihapus";
                 // Set $_SESSION['gudang_id'] sebelum mengarahkan pengguna kembali
