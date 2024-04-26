@@ -153,7 +153,7 @@ $conn->close();
                     <div class="thumbnail">
                         <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
-                    <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?> class="button"></a>
+                    <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"> <?php echo $gudang['lokasi']; ?> <class="button"></a>
                 </li>
             <?php endforeach; ?>
         </ul>
