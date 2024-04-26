@@ -57,14 +57,15 @@
 
             if ($conn->query($sql) === TRUE) {
                 echo "Barang berhasil dihapus";
+                $gudangId = $_SESSION['gudang_id'];
+                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
+                exit;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         }
         
         $conn->close();
-
-        header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
         ?>
     </div>
 </body>
