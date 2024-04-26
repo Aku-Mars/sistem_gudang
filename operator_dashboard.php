@@ -74,9 +74,9 @@ $conn->close();
         }
 
         ul li .thumbnail {
-            width: 120px;
-            height: 120px; 
-            border-radius: 10px; 
+            width: 200px; 
+            height: 200px; 
+            border-radius: 20px;
             overflow: hidden;
             margin-right: 20px;
             border: 2px solid #999;
@@ -86,6 +86,21 @@ $conn->close();
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        ul li .button {
+            background-color: #999;
+            color: #333; 
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li .button:hover {
+            background-color: #ccc;
         }
 
         form {
@@ -139,6 +154,7 @@ $conn->close();
                         <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
                     </div>
                     <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a>
+                    <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>" class="button">Edit</a>
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -154,4 +170,5 @@ $conn->close();
     </div>
 </body>
 </html>
+
 
