@@ -65,7 +65,7 @@ $conn->close();
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-image: url('https://jubelio.com/wp-content/uploads/2022/02/jubelio-blog-masalah-manajemen-gudang.jpg');
+            background-image: url('https://i0.wp.com/shipper.id/wp-content/uploads/2023/09/Gudang-dan-Warehouse-Management-System-Ketahui-Perbedaannya-di-Sini.webp?fit=1024%2C683&ssl=1');
             background-size: cover; 
             background-position: center;
         }
