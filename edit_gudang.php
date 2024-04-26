@@ -66,6 +66,16 @@ $conn->close();
             padding: 0;
         }
 
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-left: auto; /* Menempatkan konten ke kanan */
+        }
+
         h2, h3 {
             color: #333;
         }
@@ -130,49 +140,52 @@ $conn->close();
     </style>
 </head>
 <body>
-    <h2>Edit Gudang <?php echo $gudangId; ?></h2>
-    <form action="" method="post">
-        <label for="penyewa">Nama Penyewa:</label>
-        <input type="text" name="penyewa" id="penyewa" value="<?php echo $gudang['penyewa']; ?>" required>
-        <label for="tanggal_sewa">Tanggal Sewa:</label>
-        <input type="date" name="tanggal_sewa" id="tanggal_sewa" value="<?php echo $gudang['tanggal_sewa']; ?>" required>
-        <label for="tanggal_akhir_sewa">Tanggal Akhir Sewa:</label>
-        <input type="date" name="tanggal_akhir_sewa" id="tanggal_akhir_sewa" value="<?php echo $gudang['tanggal_akhir_sewa']; ?>" required>
-        <label for="lokasi">Lokasi:</label>
-        <input type="text" name="lokasi" id="lokasi" value="<?php echo $gudang['lokasi']; ?>" required>
-        <button type="submit">Simpan Perubahan</button>
-    </form>
+    <div class="container"> <!-- Menggunakan class container -->
+        <h2>Edit Gudang <?php echo $gudangId; ?></h2>
+        <form action="" method="post">
+            <label for="penyewa">Nama Penyewa:</label>
+            <input type="text" name="penyewa" id="penyewa" value="<?php echo $gudang['penyewa']; ?>" required>
+            <label for="tanggal_sewa">Tanggal Sewa:</label>
+            <input type="date" name="tanggal_sewa" id="tanggal_sewa" value="<?php echo $gudang['tanggal_sewa']; ?>" required>
+            <label for="tanggal_akhir_sewa">Tanggal Akhir Sewa:</label>
+            <input type="date" name="tanggal_akhir_sewa" id="tanggal_akhir_sewa" value="<?php echo $gudang['tanggal_akhir_sewa']; ?>" required>
+            <label for="lokasi">Lokasi:</label>
+            <input type="text" name="lokasi" id="lokasi" value="<?php echo $gudang['lokasi']; ?>" required>
+            <button type="submit">Simpan Perubahan</button>
+        </form>
 
-    <h3>List Barang:</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Nama Barang</th>
-                <th>Jumlah</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($barang as $b): ?>
+        <h3>List Barang:</h3>
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo $b['nama_barang']; ?></td>
-                    <td><?php echo $b['jumlah']; ?></td>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($barang as $b): ?>
+                    <tr>
+                        <td><?php echo $b['nama_barang']; ?></td>
+                        <td><?php echo $b['jumlah']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <h3>Tambah Barang Baru:</h3>
-    <form action="tambah_barang.php" method="post">
-        <input type="hidden" name="gudang_id" value="<?php echo $gudangId; ?>">
-        <label for="nama_barang">Nama Barang:</label>
-        <input type="text" name="nama_barang" id="nama_barang" required>
-        <label for="jumlah_barang">Jumlah Barang:</label>
-        <input type="number" name="jumlah_barang" id="jumlah_barang" required>
-        <button type="submit">Tambah Barang</button>
-    </form>
+        <h3>Tambah Barang Baru:</h3>
+        <form action="tambah_barang.php" method="post">
+            <input type="hidden" name="gudang_id" value="<?php echo $gudangId; ?>">
+            <label for="nama_barang">Nama Barang:</label>
+            <input type="text" name="nama_barang" id="nama_barang" required>
+            <label for="jumlah_barang">Jumlah Barang:</label>
+            <input type="number" name="jumlah_barang" id="jumlah_barang" required>
+            <button type="submit">Tambah Barang</button>
+        </form>
 
-    <a href="operator_dashboard.php" class="button">Kembali</a>
+        <a href="operator_dashboard.php" class="button">Kembali</a>
+    </div>
 </body>
 </html>
+
 
 
