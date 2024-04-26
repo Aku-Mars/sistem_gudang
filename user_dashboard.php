@@ -14,6 +14,17 @@ $result = $conn->query($sql);
 
 if ($result->num_rows == 1) {
     $gudang = $result->fetch_assoc();
+    
+    // Ambil data barang dari database
+    $sql_barang = "SELECT * FROM barang WHERE gudang_id = $userGudangId";
+    $result_barang = $conn->query($sql_barang);
+    $barang = [];
+
+    if ($result_barang->num_rows > 0) {
+        while ($row = $result_barang->fetch_assoc()) {
+            $barang[] = $row;
+        }
+    }
 } else {
     $gudang = null;
 }
@@ -48,10 +59,10 @@ $conn->close();
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($gudang['barang'] as $index => $barang): ?>
+                <?php foreach ($barang as $index => $barang): ?>
                     <tr>
                         <td><?php echo $index + 1; ?></td>
-                        <td><?php echo $barang['nama']; ?></td>
+                        <td><?php echo $barang['nama_barang']; ?></td>
                         <td><?php echo $barang['id']; ?></td>
                         <td><?php echo $barang['jumlah']; ?></td>
                     </tr>
