@@ -9,80 +9,70 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 600px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
+.login-container {
     background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-form {
-    margin-bottom: 20px;
 }
 
 input[type="text"],
 input[type="password"],
-input[type="date"],
 button {
+    display: block;
     width: 100%;
-    padding: 10px;
     margin-bottom: 10px;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #007bff; /* Warna biru */
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
+    background-color: #0056b3; /* Warna biru yang sedikit lebih gelap saat dihover */
 }
 
 a {
+    color: #ff6600; /* Warna orange untuk tautan */
     text-decoration: none;
-    color: #007bff;
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Garis bawah pada tautan saat dihover */
+}
+
+h2 {
+    color: #000080; /* Biru gelap untuk judul */
+}
+
+h3 {
+    color: #ff6600; /* Orange untuk sub-judul */
+}
+
+h4 {
+    color: #8b4513; /* Coklat untuk judul tabel */
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
+    width: 100%;
 }
 
 th, td {
-    padding: 10px;
+    border: 1px solid #ddd;
+    padding: 8px;
     text-align: left;
 }
 
 th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #f2f2f2; /* Warna abu-abu untuk latar belakang header tabel */
 }
 
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Warna abu-abu untuk baris genap dalam tabel */
+}
