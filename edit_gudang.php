@@ -78,6 +78,9 @@ $conn->close();
 
         h2, h3 {
             color: #333;
+            font-size: 1.2em; /* Ukuran teks sedikit lebih besar */
+            text-align: right; /* Menggeser teks ke kanan */
+            margin-right: 20px; /* Menambah margin kanan */
         }
 
         form {
@@ -186,6 +189,7 @@ $conn->close();
     </div>
 </body>
 </html>
+
 
 
 
