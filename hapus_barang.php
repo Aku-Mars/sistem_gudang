@@ -56,15 +56,15 @@
             $sql = "DELETE FROM barang WHERE id=$barangId";
 
             if ($conn->query($sql) === TRUE) {
-                // Jika penghapusan berhasil, arahkan pengguna kembali ke halaman edit gudang
-                header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
                 echo "Barang berhasil dihapus";
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         }
-
+        
         $conn->close();
+
+        header('Refresh: 1.5; URL=edit_gudang.php?id=' . $gudangId);
         ?>
     </div>
 </body>
