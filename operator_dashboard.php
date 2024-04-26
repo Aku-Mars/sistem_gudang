@@ -82,7 +82,7 @@ $conn->close();
         ul li a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #000000; /* Warna abu-abu */
+            background-color: #FFFF00; /* Warna abu-abu */
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
