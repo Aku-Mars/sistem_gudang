@@ -61,6 +61,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Di sini Anda bisa melakukan penyimpanan data ke database atau array yang sesuai
 }
 
+// Proses penambahan barang baru
+if (isset($_POST['tambah_barang'])) {
+    $nama_barang = $_POST['nama_barang'];
+    $id_barang = $_POST['id_barang'];
+    $jumlah_barang = $_POST['jumlah_barang'];
+
+    // Tambahkan barang baru ke dalam list barang gudang
+    $gudang['barang'][] = array(
+        'nama' => $nama_barang,
+        'id' => $id_barang,
+        'jumlah' => $jumlah_barang
+    );
+
+    // Simpan data gudang yang diperbarui ke sumber data (misalnya database atau array)
+    // Di sini Anda bisa melakukan penyimpanan data ke database atau array yang sesuai
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -110,5 +127,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </tbody>
     </table>
+
+    <h3>Tambah Barang Baru:</h3>
+    <form action="" method="post">
+        <label for="nama_barang">Nama Barang:</label>
+        <input type="text" name="nama_barang" id="nama_barang" required>
+        <label for="id_barang">ID Barang:</label>
+        <input type="text" name="id_barang" id="id_barang" required>
+        <label for="jumlah_barang">Jumlah Barang:</label>
+        <input type="number" name="jumlah_barang" id="jumlah_barang" required>
+        <button type="submit" name="tambah_barang">Tambah Barang</button>
+    </form>
+
+        <!-- Tombol Kembali -->
+        <a href="operator_dashboard.php">Kembali</a>
 </body>
 </html>
