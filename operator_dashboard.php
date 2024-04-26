@@ -104,6 +104,7 @@ $conn->close();
             transition: background-color 0.3s ease;
             display: block;
             margin: 0 auto;
+            font-size: 16px;
         }
 
         ul li .button:hover {
@@ -152,7 +153,7 @@ $conn->close();
 </head>
 <body>
     <div class="container">
-        <h2>Selamat datang, Operator!</h2>
+        <h2>SELAMAT DATANG, OPERATOR!</h2>
         
         <h3>Pilih Gudang:</h3>
         <ul>
