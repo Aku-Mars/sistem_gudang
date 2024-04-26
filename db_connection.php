@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "operator";
 $password = "password123";
-$dbname = "gudang";
+$dbname = "gudang_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
