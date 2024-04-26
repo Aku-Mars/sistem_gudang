@@ -1,6 +1,19 @@
 <?php
 session_start();
 
+// Koneksi ke database MySQL
+$host = "localhost";
+$username = "operator"; // Ganti dengan username MySQL Anda
+$password = "password123"; // Ganti dengan password MySQL Anda
+$database = "gudang"; // Ganti dengan nama database Anda
+
+$conn = new mysqli($host, $username, $password, $database);
+
+// Periksa koneksi
+if ($conn->connect_error) {
+    die("Koneksi ke database gagal: " . $conn->connect_error);
+}
+
 // Periksa apakah pengguna sudah login sebagai operator
 if (!isset($_SESSION['username']) || $_SESSION['role'] !== 'operator') {
     header('Location: index.php');
@@ -52,32 +65,33 @@ $gudang = $gudangData[$gudangId];
 // Proses form edit
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ambil data yang diubah dari form
-    $gudang['penyewa'] = $_POST['penyewa'];
-    $gudang['tanggal_sewa'] = $_POST['tanggal_sewa'];
-    $gudang['tanggal_akhir_sewa'] = $_POST['tanggal_akhir_sewa'];
-    $gudang['lokasi'] = $_POST['lokasi'];
+    $penyewa = $_POST['penyewa'];
+    $tanggal_sewa = $_POST['tanggal_sewa'];
+    $tanggal_akhir_sewa = $_POST['tanggal_akhir_sewa'];
+    $lokasi = $_POST['lokasi'];
 
-    // Simpan data gudang yang diperbarui ke dalam session
-    $_SESSION['gudang'][$gudangId] = $gudang;
+    // Simpan data gudang yang diperbarui ke database
+    $sql = "UPDATE gudang SET penyewa='$penyewa', tanggal_sewa='$tanggal_sewa', tanggal_akhir_sewa='$tanggal_akhir_sewa', lokasi='$lokasi' WHERE id='$gudangId'";
+    if ($conn->query($sql) !== TRUE) {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    // Proses penambahan barang baru
+    if (isset($_POST['tambah_barang'])) {
+        $nama_barang = $_POST['nama_barang'];
+        $id_barang = $_POST['id_barang'];
+        $jumlah_barang = $_POST['jumlah_barang'];
+
+        // Tambahkan barang baru ke dalam tabel barang
+        $sql = "INSERT INTO barang (gudang_id, nama, id_barang, jumlah) VALUES ('$gudangId', '$nama_barang', '$id_barang', '$jumlah_barang')";
+        if ($conn->query($sql) !== TRUE) {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
 }
 
-// Proses penambahan barang baru
-if (isset($_POST['tambah_barang'])) {
-    $nama_barang = $_POST['nama_barang'];
-    $id_barang = $_POST['id_barang'];
-    $jumlah_barang = $_POST['jumlah_barang'];
-
-    // Tambahkan barang baru ke dalam list barang gudang
-    $gudang['barang'][] = array(
-        'nama' => $nama_barang,
-        'id' => $id_barang,
-        'jumlah' => $jumlah_barang
-    );
-
-    // Simpan data gudang yang diperbarui ke dalam session
-    $_SESSION['gudang'][$gudangId] = $gudang;
-}
-
+// Tutup koneksi database
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -139,7 +153,7 @@ if (isset($_POST['tambah_barang'])) {
         <button type="submit" name="tambah_barang">Tambah Barang</button>
     </form>
 
-        <!-- Tombol Kembali -->
-        <a href="operator_dashboard.php">Kembali</a>
+    <!-- Tombol Kembali -->
+    <a href="operator_dashboard.php">Kembali</a>
 </body>
 </html>
