@@ -72,6 +72,7 @@ $conn->close();
 
         form {
             margin-top: 20px;
+            max-width: 400px;
         }
 
         label {
@@ -84,7 +85,7 @@ $conn->close();
         input[type="date"],
         input[type="number"] {
             width: calc(100% - 22px);
-            padding: 10px;
+            padding: 8px;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -114,6 +115,7 @@ $conn->close();
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            max-width: 400px;
         }
 
         th, td {
@@ -172,4 +174,5 @@ $conn->close();
     <a href="operator_dashboard.php" class="button">Kembali</a>
 </body>
 </html>
+
 
