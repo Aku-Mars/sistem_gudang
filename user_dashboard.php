@@ -106,7 +106,7 @@ $conn->close();
         <h2>SELAMAT DATANG, PENGGUNA!</h2>
 
         <?php if ($gudang): ?>
-            <h3>Gudang <?php echo $gudangLokasi; ?></h3>
+            <h3>Gudang Anda</h3>
             <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
             <p>Nama Penyewa: <?php echo $gudang['penyewa']; ?></p>
             <p>Tanggal Sewa: <?php echo $gudang['tanggal_sewa']; ?></p>
