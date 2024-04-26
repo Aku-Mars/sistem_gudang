@@ -44,7 +44,7 @@ $conn->close();
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/02/mengenal-pengertian-warehouse-4.png');
+            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/02/sop-gudang-logistik-hashmicro-1-265x198.jpg');
             background-size: cover; 
             background-position: center;
         }
@@ -83,6 +83,21 @@ $conn->close();
 
         ul li a:hover {
             background-color: #ccc; 
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 20px;
+            border: 2px solid #999;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         form {
@@ -131,7 +146,12 @@ $conn->close();
         <h3>Pilih Gudang:</h3>
         <ul>
             <?php foreach ($gudangs as $gudang): ?>
-                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
+                <li>
+                    <div class="thumbnail">
+                        <img src="gambar/<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
+                    </div>
+                    <a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a>
+                </li>
             <?php endforeach; ?>
         </ul>
 
@@ -146,7 +166,3 @@ $conn->close();
     </div>
 </body>
 </html>
-
-
-
-

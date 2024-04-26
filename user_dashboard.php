@@ -45,7 +45,7 @@ $conn->close();
             background-color: #ffffff;
             margin: 0;
             padding: 0;
-            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/02/mengenal-pengertian-warehouse.png');
+            background-image: url('https://fwlogistics.com/wp-content/uploads/2019/09/FWL_Sept_BlogImages_1_Warehouse.jpg');
             background-size: cover; 
             background-position: center;
         }
