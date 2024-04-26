@@ -68,17 +68,16 @@ $conn->close();
         }
 
         ul li {
-            margin-bottom: 20px; 
-            display: flex; 
-            align-items: center; 
+            margin-bottom: 30px; 
+            text-align: center; 
         }
 
         ul li .thumbnail {
-            width: 200px; 
-            height: 200px; 
+            width: 400px; 
+            height: 400px; 
             border-radius: 20px;
             overflow: hidden;
-            margin-right: 20px;
+            margin: 0 auto 20px; 
             border: 2px solid #999;
         }
 
@@ -89,22 +88,25 @@ $conn->close();
         }
 
         ul li .button {
-            background-color: #ccc;
+            background-color: #ffcc00; 
             color: #333; 
-            padding: 10px 20px;
+            padding: 20px 40px; 
             border: none;
             border-radius: 5px;
             text-decoration: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            display: block; 
+            margin: 0 auto; 
         }
 
         ul li .button:hover {
-            background-color: #999;
+            background-color: #f2b700;
         }
 
         form {
             margin-top: 20px;
+            text-align: center;
         }
 
         label {
@@ -169,6 +171,4 @@ $conn->close();
     </div>
 </body>
 </html>
-
-
 
