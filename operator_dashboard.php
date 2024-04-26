@@ -37,24 +37,103 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operator Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"], a.button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover, a.button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2>Selamat datang, Operator!</h2>
-    
-    <h3>Pilih Gudang:</h3>
-    <ul>
-        <?php foreach ($gudangs as $gudang): ?>
-            <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
-        <?php endforeach; ?>
-    </ul>
+    <div class="container">
+        <h2>Selamat datang, Operator!</h2>
+        
+        <h3>Pilih Gudang:</h3>
+        <ul>
+            <?php foreach ($gudangs as $gudang): ?>
+                <li><a href="edit_gudang.php?id=<?php echo $gudang['id']; ?>"><?php echo $gudang['lokasi']; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
 
-    <h3>Buat Gudang Baru:</h3>
-    <form action="" method="post">
-        <label for="lokasi">Lokasi:</label>
-        <input type="text" name="lokasi" id="lokasi" required>
-        <button type="submit">Buat Gudang Baru</button>
-    </form>
+        <h3>Buat Gudang Baru:</h3>
+        <form action="" method="post">
+            <label for="lokasi">Lokasi:</label>
+            <input type="text" name="lokasi" id="lokasi" required>
+            <button type="submit">Buat Gudang Baru</button>
+        </form>
 
-    <a href="index.php">Keluar</a>
+        <a href="index.php" class="button">Keluar</a>
+    </div>
 </body>
 </html>
