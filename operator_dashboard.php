@@ -44,6 +44,9 @@ $conn->close();
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background-image: url('https://www.hashmicro.com/id/blog/wp-content/uploads/2024/02/mengenal-pengertian-warehouse.png');
+            background-size: cover; 
+            background-position: center;
         }
 
         .container {
