@@ -88,7 +88,7 @@ $conn->close();
         h3 {
             color: #333;
             font-size: 1.2em;
-            text-align: justify; 
+            text-align: center; 
         }
 
         form {
