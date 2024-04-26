@@ -77,7 +77,6 @@ $conn->close();
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-left: 20%;
         }
 
         h2 {
@@ -95,6 +94,8 @@ $conn->close();
         form {
             margin-top: 20px;
             max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         label {
@@ -138,6 +139,8 @@ $conn->close();
             border-collapse: collapse;
             margin-top: 20px;
             max-width: 400px;
+            margin-left: auto; 
+            margin-right: auto; 
         }
 
         th, td {
@@ -153,7 +156,7 @@ $conn->close();
 </head>
 <body>
     <div class="container"> 
-        <h2>SEKETARIS GUDANG</h2>
+        <h2>SEKRETARIAT GUDANG</h2>
         <img src="<?php echo $gudang['gambar']; ?>" alt="<?php echo $gudang['lokasi']; ?>">
         <form action="" method="post">
             <label for="penyewa">Nama Penyewa:</label>
