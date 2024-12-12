@@ -24,24 +24,24 @@ Google Cloud Platform (GCP) is a Google-provided set of cloud computing services
 The cloud technology that used in this project:
 
 -   **Google Cloud Platform**: Suite of cloud computing services provided by Google.
--   **Firestore**: for the application database.
+-   **Cloud SQL**: for the application database.
 -   **Cloud Storage**: For storing the assets.
 -   **Cloud Run**: For deploying machine learning model.
 
 ## Technology Used
 
-There are four applications of Google Cloud technologies in the **Fruitarians** application: Firestore, App Engine, Cloud Storage, and Cloud Run. On the cloud side, these three services are utilized to handle all requests and provide data services.
+There are four applications of Google Cloud technologies in the **Mindcraft** application: Cloud SQL, Cloud Storage, Cloud Run and Memorystore Redis. On the cloud side, these three services are utilized to handle all requests and provide data services.
 
-### Firestore
+### Cloud SQL
 
-<img src="https://cdn.cdnlogo.com/logos/f/45/firestore.svg" width="120" height="100"/>
+<img src="https://k21academy.com/wp-content/uploads/2021/03/cloud-SQL.png" width="120" height="100"/>
 
 This firestore service **`has been deployed`** on development environment.
 
 Service details:
 
 ```YAML
-Database Type   : NoSQL
+Database Type   : PostgreSQL
 Location        : asia-southeast2
 Storage         : 10 GB
 ```
@@ -76,3 +76,19 @@ Memory          : 10
 ```
 
 Docs: [cloud-run-docs](https://cloud.google.com/run/docs)
+
+
+### Memorystore Redis
+
+<img src="https://www.vectorlogo.zone/logos/redis/redis-ar21.svg" width="150" height="150"/>
+
+This Memorystore Redis **`has been provisioned`** on the development environment.
+
+```YAML
+Location        : asia-southeast2
+Tier            : Standard
+Memory          : 1GB
+Redis Version   : 7.0
+```
+
+Docs: [memorystore-redis-docs](https://cloud.google.com/memorystore/docs/redis)
