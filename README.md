@@ -83,7 +83,7 @@ Docs: [cloud-run-docs](https://cloud.google.com/run/docs)
 
 ### Memorystore Redis
 
-<img src="https://dt-cdn.net/hub/logos/google-cloud-memorystore-for-redis.png" width="150" height="150"/>
+<img src="https://i0.wp.com/jeromerajan.com/wp-content/uploads/2023/10/Cloud_Memorystore.png?resize=300%2C270&ssl=1" width="150" height="150"/>
 
 This Memorystore Redis **`has been provisioned`** on the development environment.
 
