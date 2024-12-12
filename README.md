@@ -98,7 +98,7 @@ Docs: [memorystore-redis-docs](https://cloud.google.com/memorystore/docs/redis)
 
 ### Load Balancer
 
-<img src="https://www.vectorlogo.zone/logos/google_cloud_loadbalancer/google_cloud_loadbalancer-ar21.svg" width="150" height="150"/>
+<img src="https://miro.medium.com/v2/resize:fit:614/1*u95QsM2JaE-wqYQkJ7Cs4w.png" width="150" height="150"/>
 
 This Load Balancer **`has been configured`** on the development environment.
 
@@ -115,7 +115,7 @@ Docs: [load-balancer-docs](https://cloud.google.com/load-balancing/docs)
 
 ### Pub/Sub
 
-<img src="https://www.vectorlogo.zone/logos/google_cloud_pubsub/google_cloud_pubsub-ar21.svg" width="150" height="150"/>
+<img src="https://cdnlogo.com/logos/g/76/google-cloud-pub-sub.svg" width="150" height="150"/>
 
 This Pub/Sub service **`has been provisioned`** on the development environment.
 
