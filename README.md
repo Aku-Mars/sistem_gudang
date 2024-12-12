@@ -27,6 +27,7 @@ The cloud technology that used in this project:
 -   **Cloud SQL**: for the application database.
 -   **Cloud Storage**: For storing the assets.
 -   **Cloud Run**: For deploying machine learning model.
+-   **Memorystore Redis**: For caching and managing session data.
 
 ## Technology Used
 
