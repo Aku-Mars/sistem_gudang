@@ -21,13 +21,15 @@ _The cloud technology used in Mindcraft_
 Google Cloud Platform (GCP) is a Google-provided set of cloud computing services. It is a platform that offers computing infrastructure and services for running applications, storing and managing data, and developing software solutions.
 
 
-The cloud technology that used in this project:
+The cloud technology used in this project:
 
--   **Google Cloud Platform**: Suite of cloud computing services provided by Google.
--   **Cloud SQL**: for the application database.
--   **Cloud Storage**: For storing the assets.
--   **Cloud Run**: For deploying machine learning model.
--   **Memorystore Redis**: For caching and managing session data.
+-   **Google Cloud Platform**: Suite of cloud computing services provided by Google.  
+-   **Cloud SQL**: For the application database.  
+-   **Cloud Storage**: For storing the assets.  
+-   **Cloud Run**: For deploying machine learning model.  
+-   **Memorystore Redis**: For caching and managing session data.  
+-   **Load Balancer**: For distributing traffic across multiple backend services to ensure high availability and reliability.  
+-   **Pub/Sub**: For asynchronous messaging and event-driven communication between services.  
 
 ## Technology Used
 
@@ -93,3 +95,35 @@ Redis Version   : 7.0
 ```
 
 Docs: [memorystore-redis-docs](https://cloud.google.com/memorystore/docs/redis)
+
+### Load Balancer
+
+<img src="https://www.vectorlogo.zone/logos/google_cloud_loadbalancer/google_cloud_loadbalancer-ar21.svg" width="150" height="150"/>
+
+This Load Balancer **`has been configured`** on the development environment.
+
+```YAML
+Location          : asia-southeast2
+Type              : HTTP(S)
+Backend Services  : 5
+Certificate       : Managed SSL
+```
+
+Docs: [load-balancer-docs](https://cloud.google.com/load-balancing/docs)
+
+---
+
+### Pub/Sub
+
+<img src="https://www.vectorlogo.zone/logos/google_cloud_pubsub/google_cloud_pubsub-ar21.svg" width="150" height="150"/>
+
+This Pub/Sub service **`has been provisioned`** on the development environment.
+
+```YAML
+Location        : asia-southeast2
+Topic Count     : 5
+Subscription    : 10
+Retention       : 7 days
+```
+
+Docs: [pub-sub-docs](https://cloud.google.com/pubsub/docs)
