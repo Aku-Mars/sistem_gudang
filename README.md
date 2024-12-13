@@ -126,8 +126,6 @@ Retention       : 7 days
 
 Docs: [pub-sub-docs](https://cloud.google.com/pubsub/docs)
 
----
-
 ## Cloud Architecture 
 
 This is our cloud architecture that we use for this project
@@ -139,5 +137,7 @@ This is our cloud architecture that we use for this project
 We calculated all services using google cloud's pricing calculator, and got estimated Rp4.917.858/Month
 
 <img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/GCPC.png"/>
+
+---
 
 
