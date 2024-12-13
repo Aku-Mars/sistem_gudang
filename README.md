@@ -111,8 +111,6 @@ Certificate       : Managed SSL
 
 Docs: [load-balancer-docs](https://cloud.google.com/load-balancing/docs)
 
----
-
 ### Pub/Sub
 
 <img src="https://cdnlogo.com/logos/g/76/google-cloud-pub-sub.svg" width="150" height="150"/>
