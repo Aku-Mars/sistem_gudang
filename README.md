@@ -2,7 +2,7 @@
 
 ## 🌟 Base URL  
 
-Access the Mindcraft API Documentation (Bangkit Product-Based Capstone Project - **C242-PS406**) via the link below:  
+Mindcraft API Documentation (Bangkit Product Based Capstone Project - C242-PS406)
 
 ```sh
 https://petot-mindcraft.cloud/docs
@@ -104,9 +104,7 @@ Enables seamless communication between microservices using asynchronous messagin
 
 ```yaml
 Location:       asia-southeast2  
-Topic Count:    5  
-Subscription:   10  
-Retention:      7 days  
+Topic Count:    3
 ```  
 📖 [Learn more about Pub/Sub](https://cloud.google.com/pubsub/docs)  
 
@@ -116,19 +114,19 @@ Retention:      7 days
 
 We leverage Google Cloud Platform (GCP) to deploy our services, ensuring reliability and scalability. Below are the core services we offer:  
 
-### 🧠 Mindcraft Service  
+#### 🧠 Mindcraft Service  
 Primary service powering the core features of the application.  
 🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service)  
 
-### 🔐 Auth Service  
+#### 🔐 Auth Service  
 Secure authentication service for safeguarding user data.  
 🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
 
-### 📚 Docs Service  
+#### 📚 Docs Service  
 Detailed documentation to help you navigate and utilize features efficiently.  
 🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
 
-### 🤖 Machine Learning Services  
+#### 🤖 Machine Learning Services  
 Cutting-edge capabilities for question-answer generation and summarization.  
 🔗 [Explore more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
 
