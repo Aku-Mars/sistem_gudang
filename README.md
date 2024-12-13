@@ -114,7 +114,7 @@ Retention:      7 days
 
 ## 🌟 Our Services  
 
-Mindcraft ensures seamless application functionality with these core services:  
+We leverage Google Cloud Platform (GCP) to deploy our services, ensuring reliability and scalability. Below are the core services we offer:  
 
 ### 🧠 Mindcraft Service  
 Primary service powering the core features of the application.  
@@ -122,15 +122,15 @@ Primary service powering the core features of the application.
 
 ### 🔐 Auth Service  
 Secure authentication service for safeguarding user data.  
-🔗 [Learn more](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
+🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
 
 ### 📚 Docs Service  
 Detailed documentation to help you navigate and utilize features efficiently.  
-🔗 [Find out more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
+🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
 
 ### 🤖 Machine Learning Services  
 Cutting-edge capabilities for question-answer generation and summarization.  
-🔗 [Discover more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
+🔗 [Explore more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
 
 ---
 
@@ -150,6 +150,3 @@ We calculated the costs for all services using Google Cloud's Pricing Calculator
 <p align="center">
   <img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/GCPC.png" alt="GCP Pricing Calculator"/>
 </p>  
-```  
-
-Let me know if you’d like further enhancements! 😊
