@@ -39,11 +39,11 @@ Google Cloud Platform (GCP) is a Google-provided set of cloud computing services
 <img src="https://k21academy.com/wp-content/uploads/2021/03/cloud-SQL.png" width="120" height="100" alt="Cloud SQL Icon"/>  
 A PostgreSQL database deployed for development.  
 
-```yaml
-Database Type:  PostgreSQL  
-Location:       asia-southeast2  
-Storage:        10 GB  
-```  
+```YAML
+Database Type   : PostgreSQL
+Location        : asia-southeast2
+Storage         : 10 GB
+```
 📖 [Learn more about Cloud SQL](https://cloud.google.com/firestore/docs)  
 
 ---  
@@ -52,11 +52,11 @@ Storage:        10 GB
 <img src="https://symbols.getvecta.com/stencil_4/47_google-cloud-storage.fee263d33a.svg" width="100" height="50" alt="Cloud Storage Icon"/>  
 A regional storage solution optimized for performance.  
 
-```yaml
-Location Type:  Region  
-Location:       asia-southeast2  
-Storage Class:  Standard  
-```  
+```YAML
+Location Type   : Region
+Location        : asia-southeast2
+Storage Class   : Standard
+```
 📖 [Learn more about Cloud Storage](https://cloud.google.com/storage/docs)  
 
 ---  
@@ -65,11 +65,11 @@ Storage Class:  Standard
 <img src="https://static-00.iconduck.com/assets.00/google-cloud-run-icon-2048x1840-x12dqzzh.png" width="150" height="150" alt="Cloud Run Icon"/>  
 Enables rapid deployment of containerized machine learning models.  
 
-```yaml
-Location:       asia-southeast2  
-CPU:            12  
-Memory:         10 GB  
-```  
+```YAML
+Location        : asia-southeast2
+CPU             : 12
+Memory          : 10 GB
+```
 📖 [Learn more about Cloud Run](https://cloud.google.com/run/docs)  
 
 ---  
@@ -78,12 +78,12 @@ Memory:         10 GB
 <img src="https://i0.wp.com/jeromerajan.com/wp-content/uploads/2023/10/Cloud_Memorystore.png?resize=300%2C270&ssl=1" width="150" height="150" alt="Memorystore Redis Icon"/>  
 A caching solution for fast and reliable session data management.  
 
-```yaml
-Location:       asia-southeast2  
-Tier:           Standard  
-Memory:         1 GB  
-Redis Version:  7.0  
-```  
+```YAML
+Location        : asia-southeast2
+Tier            : Standard
+Memory          : 1GB
+Redis Version   : 7.0
+```
 📖 [Learn more about Memorystore Redis](https://cloud.google.com/memorystore/docs/redis)  
 
 ---  
@@ -92,12 +92,12 @@ Redis Version:  7.0
 <img src="https://miro.medium.com/v2/resize:fit:614/1*u95QsM2JaE-wqYQkJ7Cs4w.png" width="150" height="150" alt="Load Balancer Icon"/>  
 Handles traffic distribution for optimal performance and reliability.  
 
-```yaml
-Location:          asia-southeast2  
-Type:              HTTP(S)  
-Backend Services:  5  
-Certificate:       Managed SSL  
-```  
+```YAML
+Location          : asia-southeast2
+Type              : HTTP(S)
+Backend Services  : 5
+Certificate       : Managed SSL
+```
 📖 [Learn more about Load Balancer](https://cloud.google.com/load-balancing/docs)  
 
 ---  
@@ -106,10 +106,10 @@ Certificate:       Managed SSL
 <img src="https://cdnlogo.com/logos/g/76/google-cloud-pub-sub.svg" width="150" height="150" alt="Pub/Sub Icon"/>  
 Enables seamless communication between microservices using asynchronous messaging.  
 
-```yaml
-Location:       asia-southeast2  
-Topic Count:    3
-```  
+```YAML
+Location        : asia-southeast2
+Topic Count     : 5
+```
 📖 [Learn more about Pub/Sub](https://cloud.google.com/pubsub/docs)  
 
 ---
