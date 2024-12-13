@@ -12,11 +12,15 @@ https://petot-mindcraft.cloud/docs
 
 ## ☁️ Cloud Technology  
 
-Mindcraft leverages the power of **Google Cloud Platform (GCP)** to ensure high performance, scalability, and reliability.  
+_The cloud technology used in Mindcraft_
 
-<p align="center" style="background-color: #f7f7f7; padding: 14px; border-radius: 15px;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud Logo" width="250"/>
-</p>  
+**Powered by:**
+
+<p style="text-align: center; background-color: #eee; display: inline-block; padding: 14px 20px; border-radius: 15px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" width="250"/>
+</p>
+
+Google Cloud Platform (GCP) is a Google-provided set of cloud computing services. It is a platform that offers computing infrastructure and services for running applications, storing and managing data, and developing software solutions.
 
 ### Key Technologies Used:  
 - **Google Cloud Platform**: Comprehensive suite of cloud services by Google.  
