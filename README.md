@@ -1,143 +1,155 @@
-# Mindcraft - Cloud Computing
+# 🌐 Mindcraft - Cloud Computing  
 
-## Base URL
+## 🌟 Base URL  
 
-Mindcraft API Documentation (Bangkit Product Based Capstone Project - C242-PS406)
+Access the Mindcraft API Documentation (Bangkit Product-Based Capstone Project - **C242-PS406**) via the link below:  
 
 ```sh
 https://petot-mindcraft.cloud/docs
 ```
 
-## Cloud Technology
+---
 
-_The cloud technology used in Mindcraft_
+## ☁️ Cloud Technology  
 
-**Powered by:**
+Mindcraft leverages the power of **Google Cloud Platform (GCP)** to ensure high performance, scalability, and reliability.  
 
-<p style="text-align: center; background-color: #eee; display: inline-block; padding: 14px 20px; border-radius: 15px;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" width="250"/>
-</p>
+<p align="center" style="background-color: #f7f7f7; padding: 14px; border-radius: 15px;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud Logo" width="250"/>
+</p>  
 
-Google Cloud Platform (GCP) is a Google-provided set of cloud computing services. It is a platform that offers computing infrastructure and services for running applications, storing and managing data, and developing software solutions.
-
-
-The cloud technology used in this project:
-
--   **Google Cloud Platform**: Suite of cloud computing services provided by Google.  
--   **Cloud SQL**: For the application database.  
--   **Cloud Storage**: For storing the assets.  
--   **Cloud Run**: For deploying machine learning model.  
--   **Memorystore Redis**: For caching and managing session data.  
--   **Load Balancer**: For distributing traffic across multiple backend services to ensure high availability and reliability.  
--   **Pub/Sub**: For asynchronous messaging and event-driven communication between services.  
-
-## Technology Used
-
-There are four applications of Google Cloud technologies in the **Mindcraft** application: Cloud SQL, Cloud Storage, Cloud Run and Memorystore Redis. On the cloud side, these three services are utilized to handle all requests and provide data services.
-
-### Cloud SQL
-
-<img src="https://k21academy.com/wp-content/uploads/2021/03/cloud-SQL.png" width="120" height="100"/>
-
-This firestore service **`has been deployed`** on development environment.
-
-Service details:
-
-```YAML
-Database Type   : PostgreSQL
-Location        : asia-southeast2
-Storage         : 10 GB
-```
-
-Docs: [firestore-docs](https://cloud.google.com/firestore/docs)
-
-### Cloud Storage
-
-<img src="https://symbols.getvecta.com/stencil_4/47_google-cloud-storage.fee263d33a.svg" width="100" height="50"/>
-
-This storage service **`has been deployed`**. on development environment.
-
-```YAML
-Location Type   : Region
-Location        : asia-southeast2
-Storage Class   : Standard
-```
-
-Docs: [cloud-storage-docs](https://cloud.google.com/storage/docs)
-
-### Cloud Run
-
-<img src="https://static-00.iconduck.com/assets.00/google-cloud-run-icon-2048x1840-x12dqzzh.png" width="150" height="150"/>
-
-This cloud run service **`has been deployed`**. on development environment.
-
-```YAML
-Location        : asia-southeast2
-CPU             : 12
-Memory          : 10
-
-```
-
-Docs: [cloud-run-docs](https://cloud.google.com/run/docs)
-
-
-### Memorystore Redis
-
-<img src="https://i0.wp.com/jeromerajan.com/wp-content/uploads/2023/10/Cloud_Memorystore.png?resize=300%2C270&ssl=1" width="150" height="150"/>
-
-This Memorystore Redis **`has been provisioned`** on the development environment.
-
-```YAML
-Location        : asia-southeast2
-Tier            : Standard
-Memory          : 1GB
-Redis Version   : 7.0
-```
-
-Docs: [memorystore-redis-docs](https://cloud.google.com/memorystore/docs/redis)
-
-### Load Balancer
-
-<img src="https://miro.medium.com/v2/resize:fit:614/1*u95QsM2JaE-wqYQkJ7Cs4w.png" width="150" height="150"/>
-
-This Load Balancer **`has been configured`** on the development environment.
-
-```YAML
-Location          : asia-southeast2
-Type              : HTTP(S)
-Backend Services  : 5
-Certificate       : Managed SSL
-```
-
-Docs: [load-balancer-docs](https://cloud.google.com/load-balancing/docs)
-
-### Pub/Sub
-
-<img src="https://cdnlogo.com/logos/g/76/google-cloud-pub-sub.svg" width="150" height="150"/>
-
-This Pub/Sub service **`has been provisioned`** on the development environment.
-
-```YAML
-Location        : asia-southeast2
-Topic Count     : 5
-Subscription    : 10
-Retention       : 7 days
-```
-
-Docs: [pub-sub-docs](https://cloud.google.com/pubsub/docs)
-
-## Cloud Architecture 
-
-This is our cloud architecture that we use for this project
-
-<img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/Cloud%20Architecture.png"/>
-
-## Google Cloud's pricing calculator
-
-We calculated all services using google cloud's pricing calculator, and got estimated Rp4.917.858/Month
-
-<img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/GCPC.png"/>
+### Key Technologies Used:  
+- **Google Cloud Platform**: Comprehensive suite of cloud services by Google.  
+- **Cloud SQL**: Database management for our application.  
+- **Cloud Storage**: Secure and scalable storage solution for application assets.  
+- **Cloud Run**: Seamlessly deploys our machine learning models.  
+- **Memorystore Redis**: Provides robust caching and session management.  
+- **Load Balancer**: Ensures high availability by distributing traffic across services.  
+- **Pub/Sub**: Enables event-driven communication and asynchronous messaging.  
 
 ---
 
+## 🔧 Technology Overview  
 
+### 🗄️ Cloud SQL  
+<img src="https://k21academy.com/wp-content/uploads/2021/03/cloud-SQL.png" width="120" height="100" alt="Cloud SQL Icon"/>  
+A PostgreSQL database deployed for development.  
+
+```yaml
+Database Type:  PostgreSQL  
+Location:       asia-southeast2  
+Storage:        10 GB  
+```  
+📖 [Learn more about Cloud SQL](https://cloud.google.com/firestore/docs)  
+
+---  
+
+### 📦 Cloud Storage  
+<img src="https://symbols.getvecta.com/stencil_4/47_google-cloud-storage.fee263d33a.svg" width="100" height="50" alt="Cloud Storage Icon"/>  
+A regional storage solution optimized for performance.  
+
+```yaml
+Location Type:  Region  
+Location:       asia-southeast2  
+Storage Class:  Standard  
+```  
+📖 [Learn more about Cloud Storage](https://cloud.google.com/storage/docs)  
+
+---  
+
+### 🚀 Cloud Run  
+<img src="https://static-00.iconduck.com/assets.00/google-cloud-run-icon-2048x1840-x12dqzzh.png" width="150" height="150" alt="Cloud Run Icon"/>  
+Enables rapid deployment of containerized machine learning models.  
+
+```yaml
+Location:       asia-southeast2  
+CPU:            12  
+Memory:         10 GB  
+```  
+📖 [Learn more about Cloud Run](https://cloud.google.com/run/docs)  
+
+---  
+
+### ⚡ Memorystore Redis  
+<img src="https://i0.wp.com/jeromerajan.com/wp-content/uploads/2023/10/Cloud_Memorystore.png?resize=300%2C270&ssl=1" width="150" height="150" alt="Memorystore Redis Icon"/>  
+A caching solution for fast and reliable session data management.  
+
+```yaml
+Location:       asia-southeast2  
+Tier:           Standard  
+Memory:         1 GB  
+Redis Version:  7.0  
+```  
+📖 [Learn more about Memorystore Redis](https://cloud.google.com/memorystore/docs/redis)  
+
+---  
+
+### 🔗 Load Balancer  
+<img src="https://miro.medium.com/v2/resize:fit:614/1*u95QsM2JaE-wqYQkJ7Cs4w.png" width="150" height="150" alt="Load Balancer Icon"/>  
+Handles traffic distribution for optimal performance and reliability.  
+
+```yaml
+Location:          asia-southeast2  
+Type:              HTTP(S)  
+Backend Services:  5  
+Certificate:       Managed SSL  
+```  
+📖 [Learn more about Load Balancer](https://cloud.google.com/load-balancing/docs)  
+
+---  
+
+### 📡 Pub/Sub  
+<img src="https://cdnlogo.com/logos/g/76/google-cloud-pub-sub.svg" width="150" height="150" alt="Pub/Sub Icon"/>  
+Enables seamless communication between microservices using asynchronous messaging.  
+
+```yaml
+Location:       asia-southeast2  
+Topic Count:    5  
+Subscription:   10  
+Retention:      7 days  
+```  
+📖 [Learn more about Pub/Sub](https://cloud.google.com/pubsub/docs)  
+
+---
+
+## 🌟 Our Services  
+
+Mindcraft ensures seamless application functionality with these core services:  
+
+### 🧠 Mindcraft Service  
+Primary service powering the core features of the application.  
+🔗 [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service)  
+
+### 🔐 Auth Service  
+Secure authentication service for safeguarding user data.  
+🔗 [Learn more](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
+
+### 📚 Docs Service  
+Detailed documentation to help you navigate and utilize features efficiently.  
+🔗 [Find out more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
+
+### 🤖 Machine Learning Services  
+Cutting-edge capabilities for question-answer generation and summarization.  
+🔗 [Discover more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
+
+---
+
+## 🏗️ Cloud Architecture  
+
+Here’s the cloud architecture utilized for this project:  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/Cloud%20Architecture.png" alt="Cloud Architecture"/>
+</p>  
+
+---
+
+## 💰 Google Cloud's Pricing Estimate  
+
+We calculated the costs for all services using Google Cloud's Pricing Calculator and estimated an expenditure of **Rp 4,917,858/month**.  
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Aku-Mars/gambar/refs/heads/main/GCPC.png" alt="GCP Pricing Calculator"/>
+</p>  
+```  
+
+Let me know if you’d like further enhancements! 😊
