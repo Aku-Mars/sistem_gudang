@@ -115,18 +115,16 @@ Topic Count:    3
 We leverage Google Cloud Platform (GCP) to deploy our services, ensuring reliability and scalability. Below are the core services we offer:  
 
 #### 🧠 Mindcraft Service  
-Primary service powering the core features of the application. [Explore more here](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service)  
+Primary service powering the core features of the application.    [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service)  
 
 #### 🔐 Auth Service  
-Secure authentication service for safeguarding user data. [Explore more here](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
+Secure authentication service for safeguarding user data.    [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/auth-service)  
 
 #### 📚 Docs Service  
-Detailed documentation to help you navigate and utilize features efficiently.  
-[Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
+Detailed documentation to help you navigate and utilize features efficiently.    [Explore more](https://github.com/The-Petot/Cloud-Computing/tree/mindcraft-service/docs)  
 
 #### 🤖 Machine Learning Services  
-Cutting-edge capabilities for question-answer generation and summarization.  
-[Explore more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
+Cutting-edge capabilities for question-answer generation and summarization.    [Explore more](https://github.com/The-Petot/Machine-Learning?tab=readme-ov-file#question-answer-generate)  
 
 ---
 
